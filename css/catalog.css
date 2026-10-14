@@ -1,0 +1,203 @@
+/* ============================================================
+   RINGO — каталожная / теговая страница (шаблон /catalog/[type]).
+   Файл дополняет css/ringo.css: использует те же design-токены
+   (:root в ringo.css). Никаких инлайн-стилей, никаких классов
+   на контентных тегах — только компонентные классы.
+   ============================================================ */
+
+/* --- HERO каталога --- сквозной компонент .cat-hero вынесен в ringo.css
+   (используется и каталогом, и разделом «Магазины»). Здесь не дублируется. */
+
+/* --- «Смотрите также» без визуального H2 (.pairs-plain) ---
+   H2 «Смежные разделы» остаётся в DOM ради корректной иерархии
+   заголовков (H2 → H3 в .pairs-block) и SEO, но не отображается:
+   после eyebrow сразу идут собственные подзаголовки блоков — секция
+   легче и не звучит коряво. Модификатор .pairs-plain применяется
+   только на каталожной странице, общий .pairs в ringo.css не тронут. */
+.pairs-plain .pairs-head{margin-bottom:clamp(28px,3.5vw,44px);}
+.pairs-plain .pairs-head p{margin-bottom:0;}
+.pairs-plain .pairs-head h2{
+  position:absolute;width:1px;height:1px;padding:0;margin:-1px;
+  overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;border:0;
+}
+
+/* --- Раскрывающийся SEO-текст под интро --- */
+.cat-more{margin-top:clamp(18px,2.5vw,28px);max-width:900px;}
+.cat-more summary{
+  list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:8px;
+  font-family:var(--font-body);font-size:13px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--gold);transition:opacity .3s;
+}
+.cat-more summary::-webkit-details-marker{display:none;}
+.cat-more summary::after{content:"+";font-size:18px;line-height:1;transition:transform .35s var(--ease);}
+.cat-more[open] summary::after{transform:rotate(45deg);}
+.cat-more summary:hover{opacity:.75;}
+.cat-more p{color:var(--body-2);line-height:1.85;margin:16px 0 0;}
+
+/* --- Панель управления (счётчик + сортировка + фильтр) --- */
+.cat-controls{max-width:var(--wrap);margin:0 auto;padding:clamp(24px,3vw,40px) var(--gutter-x) 0;}
+.cat-controls-inner{
+  display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;
+  padding-bottom:clamp(16px,2vw,22px);border-bottom:1px solid var(--line);
+}
+.cat-count{margin:0;font-size:14px;color:var(--muted);}
+.cat-count strong{font-family:var(--font-head);font-size:18px;color:var(--ink);margin-right:4px;}
+.cat-controls-actions{display:flex;gap:12px;align-items:center;}
+
+/* Сортировка — кастомный дропдаун */
+.cat-sort{position:relative;}
+.cat-sort-trigger{
+  display:inline-flex;align-items:center;gap:10px;cursor:pointer;
+  font-family:var(--font-body);font-size:13px;letter-spacing:.02em;color:var(--ink-2);
+  background:#fff;border:1px solid var(--line-16);border-radius:999px;padding:9px 16px;
+  transition:border-color .3s,color .3s;
+}
+.cat-sort-trigger:hover{border-color:var(--gold);color:var(--gold);}
+.cat-sort-trigger svg{width:12px;height:7px;transition:transform .35s var(--ease);}
+.cat-sort.is-open .cat-sort-trigger svg{transform:rotate(180deg);}
+.cat-sort-list{
+  position:absolute;right:0;top:calc(100% + 8px);z-index:20;min-width:200px;margin:0;padding:6px;
+  list-style:none;background:#fff;border:1px solid var(--line);
+  box-shadow:0 18px 44px -26px rgba(47,44,40,.4);
+  opacity:0;visibility:hidden;transform:translateY(-6px);
+  transition:opacity .3s,transform .3s,visibility .3s;
+}
+.cat-sort.is-open .cat-sort-list{opacity:1;visibility:visible;transform:translateY(0);}
+.cat-sort-option{
+  padding:10px 14px;font-size:14px;color:var(--ink-2);cursor:pointer;transition:background .25s,color .25s;
+}
+.cat-sort-option:hover{background:var(--cream);color:var(--gold);}
+.cat-sort-option[aria-selected="true"]{color:var(--gold);}
+
+/* Кнопка «Фильтр» */
+.cat-filter-toggle{
+  display:inline-flex;align-items:center;gap:10px;cursor:pointer;
+  font-family:var(--font-body);font-size:13px;letter-spacing:.02em;color:var(--ink-2);
+  background:#fff;border:1px solid var(--line-16);border-radius:999px;padding:9px 16px;
+  transition:border-color .3s,color .3s;
+}
+.cat-filter-toggle:hover,
+.cat-filter-toggle[aria-expanded="true"]{border-color:var(--gold);color:var(--gold);}
+.cat-filter-toggle svg{width:18px;height:18px;}
+
+/* --- Панель фильтра --- */
+.cat-filter-panel{
+  max-width:var(--wrap);margin:0 auto;padding:clamp(24px,3vw,34px) 0 0;
+}
+.cat-filter-panel[hidden]{display:none;}
+.cat-filter-grid{
+  display:grid;gap:clamp(20px,3vw,40px);
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+}
+.cat-filter-group{border:0;margin:0;padding:0;min-width:0;}
+.cat-filter-group legend{
+  font-family:var(--font-body);font-weight:500;font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--muted-3);padding:0;margin:0 0 14px;
+}
+.cat-range{display:flex;gap:12px;}
+.cat-range label{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--muted);flex:1 1 0;min-width:0;}
+.cat-range input{
+  width:100%;min-width:0;font-family:var(--font-body);font-size:14px;color:var(--ink);
+  border:0;border-bottom:1px solid var(--line-16);background:transparent;padding:6px 2px;
+  transition:border-color .3s;
+}
+.cat-range input:focus{outline:none;border-color:var(--gold);}
+.cat-check{display:flex;align-items:center;gap:10px;font-size:14px;color:var(--ink-2);cursor:pointer;margin-bottom:12px;}
+.cat-check input{width:16px;height:16px;accent-color:var(--gold);flex:0 0 auto;}
+.cat-check:last-child{margin-bottom:0;}
+.cat-filter-foot{
+  display:flex;gap:14px;justify-content:flex-end;align-items:center;
+  margin-top:clamp(22px,3vw,32px);padding-top:clamp(18px,2vw,24px);border-top:1px solid var(--line-soft);
+}
+.cat-filter-reset{
+  background:none;border:0;cursor:pointer;font-family:var(--font-body);font-size:13px;
+  letter-spacing:.02em;color:var(--muted);transition:color .3s;
+}
+.cat-filter-reset:hover{color:var(--gold);}
+.cat-filter-apply{
+  cursor:pointer;font-family:var(--font-body);font-size:13px;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--ink);background:#fff;border:1px solid var(--ink);padding:12px 30px;
+  transition:background .4s var(--ease),color .4s var(--ease);
+}
+.cat-filter-apply:hover{background:var(--ink);color:#fff;}
+
+/* --- Сетка товаров (3 в ряд, как в старой вёрстке) --- */
+.cat-listing{max-width:var(--wrap);margin:0 auto;padding:clamp(32px,4vw,56px) var(--gutter-x) var(--section-y);}
+.cat-grid{
+  list-style:none;margin:0;padding:0;
+  display:grid;gap:clamp(20px,3vw,44px);
+  grid-template-columns:repeat(3,1fr);
+}
+.cat-card{position:relative;display:flex;}
+.cat-card-link{
+  display:flex;flex-direction:column;width:100%;text-decoration:none;color:inherit;
+  transition:transform .5s var(--ease);
+}
+.cat-card-link:hover{transform:translateY(-4px);}
+.cat-card-media{
+  position:relative;display:block;width:100%;aspect-ratio:1/1;overflow:hidden;
+  background:var(--placeholder);box-shadow:0 10px 30px -22px rgba(47,44,40,.3);transition:box-shadow .5s;
+}
+.cat-card-link:hover .cat-card-media{box-shadow:0 18px 40px -20px rgba(47,44,40,.4);}
+.cat-card-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .7s var(--ease);}
+.cat-card-link:hover .cat-card-media img{transform:scale(1.04);}
+/* Подписи под карточкой — по образцу родного сайта:
+   НАЗВАНИЕ — заголовочным шрифтом, капсом, золотом, по центру (акцент-надзаголовок);
+   ЦЕНА — тёмная, крупнее названия, по центру (визуально доминирует). */
+.cat-card-name{
+  font-family:var(--font-head);font-weight:500;font-size:clamp(14px,1.2vw,16px);
+  line-height:1.32;letter-spacing:.05em;text-transform:uppercase;text-align:center;
+  color:var(--gold);margin:20px 0 10px;
+}
+.cat-card-price{
+  font-family:var(--font-head);font-weight:500;font-size:clamp(18px,1.6vw,21px);
+  letter-spacing:.03em;text-align:center;color:var(--ink);margin-top:auto;
+}
+
+/* Избранное — тонкий золотой контур-сердце поверх фото (как на родном сайте) */
+.cat-fav{
+  position:absolute;top:14px;right:14px;z-index:3;
+  width:34px;height:34px;display:flex;align-items:center;justify-content:center;
+  background:none;border:0;padding:0;cursor:pointer;
+  color:var(--gold);transition:color .3s,transform .3s var(--ease);
+}
+.cat-fav svg{width:22px;height:22px;}
+.cat-fav:hover{color:var(--gold-hover);transform:scale(1.1);}
+.cat-fav[aria-pressed="true"]{color:var(--gold);}
+.cat-fav[aria-pressed="true"] svg{fill:var(--gold);}
+
+/* --- Пагинация --- */
+.cat-pager{margin-top:clamp(40px,5vw,64px);text-align:center;}
+.cat-loadmore{
+  cursor:pointer;font-family:var(--font-body);font-size:13px;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--ink);background:#fff;border:1px solid var(--ink);padding:14px 44px;
+  transition:background .4s var(--ease),color .4s var(--ease);
+}
+.cat-loadmore:hover{background:var(--ink);color:#fff;}
+.cat-pagenav{
+  display:flex;gap:6px;align-items:center;justify-content:center;
+  margin-top:clamp(24px,3vw,34px);
+}
+.cat-pagenav a,
+.cat-pagenav span{
+  min-width:40px;height:40px;display:inline-flex;align-items:center;justify-content:center;
+  font-family:var(--font-body);font-size:14px;text-decoration:none;
+  color:var(--muted);border:1px solid var(--line-16);transition:border-color .3s,color .3s;
+}
+.cat-pagenav a:hover{border-color:var(--gold);color:var(--gold);}
+.cat-pagenav span[aria-current]{color:var(--ink);border-color:var(--ink);}
+.cat-pagenav-next{color:var(--gold);}
+
+/* --- Адаптив (ориентир на старую сетку: 3 → 2 → плитки) --- */
+@media (max-width:860px){
+  .cat-grid{grid-template-columns:repeat(2,1fr);}
+}
+@media (max-width:600px){
+  .cat-controls-inner{flex-direction:column;align-items:stretch;}
+  .cat-controls-actions{justify-content:space-between;}
+}
+@media (max-width:440px){
+  .cat-grid{grid-template-columns:1fr 1fr;gap:14px;}
+  .cat-card-name{font-size:13px;}
+  .cat-card-price{font-size:16px;}
+}

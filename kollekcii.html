@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Коллекции RINGO — авторские ювелирные украшения | RINGO</title>
+<meta name="description" content="Авторские ювелирные коллекции RINGO: Кристалл, Каменный цветок, Сверхновая, ШОКО, Королева, Мосты и другие. Дизайнерские украшения из золота с бриллиантами и цветными камнями — выберите коллекцию.">
+<link rel="canonical" href="https://ringo.example/collections/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Коллекции RINGO — авторские ювелирные украшения">
+<meta property="og:description" content="Дизайнерские ювелирные коллекции RINGO из золота с бриллиантами и цветными камнями. Выберите коллекцию по стилю и настроению.">
+<meta property="og:image" content="https://ringo.example/images/hero-set.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="675">
+<meta property="og:url" content="https://ringo.example/collections/">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext y='26' font-size='26' font-family='serif' fill='%23BA905A'%3ER%3C/text%3E%3C/svg%3E">
+
+<!-- Шрифты -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Unicase:wght@500;600;700&family=Spectral:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/ringo.css">
+
+<!-- JSON-LD: CollectionPage + BreadcrumbList -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"CollectionPage",
+  "name":"Коллекции RINGO",
+  "description":"Авторские ювелирные коллекции RINGO: дизайнерские украшения из золота с бриллиантами и цветными камнями.",
+  "url":"https://ringo.example/collections/",
+  "breadcrumb":{
+    "@type":"BreadcrumbList",
+    "itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Главная","item":"https://ringo.example/"},
+      {"@type":"ListItem","position":2,"name":"Коллекции"}
+    ]
+  }
+}
+</script>
+<!-- JSON-LD: ItemList — коллекции -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"ItemList",
+  "name":"Коллекции RINGO",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Кристалл","url":"https://ringo.example/collections/crystal/"},
+    {"@type":"ListItem","position":2,"name":"Каменный цветок","url":"https://ringo.example/collections/kamennyy-tsvetok/"},
+    {"@type":"ListItem","position":3,"name":"Сверхновая","url":"https://ringo.example/collections/sverhnovaya/"},
+    {"@type":"ListItem","position":4,"name":"Сфера","url":"https://ringo.example/collections/sfera/"},
+    {"@type":"ListItem","position":5,"name":"ШОКО","url":"https://ringo.example/collections/shoko/"},
+    {"@type":"ListItem","position":6,"name":"Королева","url":"https://ringo.example/collections/queen/"},
+    {"@type":"ListItem","position":7,"name":"Мосты","url":"https://ringo.example/collections/bridges/"},
+    {"@type":"ListItem","position":8,"name":"Красный квадрат","url":"https://ringo.example/collections/red/"}
+  ]
+}
+</script>
+</head>
+<body>
+
+<!-- ============ ШАПКА ============ -->
+<header class="site-header">
+  <div class="header-accent"></div>
+
+  <div class="header-logo-row">
+    <a class="header-logo" href="/" aria-label="RINGO — на главную">
+      <img src="images/logo.png" alt="RINGO" width="120" height="46">
+    </a>
+  </div>
+
+  <div class="header-nav-row">
+    <button class="header-burger" type="button" id="header-burger" aria-label="Открыть меню" aria-expanded="false" aria-controls="header-drawer">
+      <span class="header-burger-lines" aria-hidden="true"><span></span><span></span><span></span></span>
+    </button>
+    <nav class="header-nav" aria-label="Основная навигация">
+      <a href="/catalog/">Ювелирные украшения</a>
+      <a href="/collections/">Коллекции</a>
+      <a href="/exclusive/">Эксклюзив</a>
+      <a href="/sale/">Акции</a>
+      <a href="/salons/">Магазины</a>
+    </nav>
+    <div class="header-icons">
+      <a href="tel:+74950000000" aria-label="Позвонить">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M5 4h3.5l1.8 4.5-2.2 1.6a12 12 0 005.2 5.2l1.6-2.2L21 16v3.5a1.5 1.5 0 01-1.6 1.5A16.5 16.5 0 013.5 5.6 1.5 1.5 0 015 4z" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="/search/" aria-label="Поиск">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="10.5" cy="10.5" r="6.5"/><line x1="15.5" y1="15.5" x2="20.5" y2="20.5" stroke-linecap="round"/></svg>
+      </a>
+      <a href="/account/" aria-label="Личный кабинет">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="12" cy="8" r="4"/><path d="M4.5 20.5c0-4 3.4-6.5 7.5-6.5s7.5 2.5 7.5 6.5" stroke-linecap="round"/></svg>
+      </a>
+      <a href="/wishlist/" aria-label="Избранное">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20.3l-1.45-1.32C5.7 14.6 3 12.1 3 9 3 6.5 5 4.5 7.5 4.5c1.4 0 2.75.65 3.6 1.7l.9 1.1.9-1.1c.85-1.05 2.2-1.7 3.6-1.7C19 4.5 21 6.5 21 9c0 3.1-2.7 5.6-7.55 9.98L12 20.3z"/></svg>
+      </a>
+      <a href="/cart/" aria-label="Корзина">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M7 9h10l-.62 10.55a1 1 0 01-1 .95H8.62a1 1 0 01-1-.95L7 9z"/><path d="M9.3 9V7.5a2.7 2.7 0 015.4 0V9"/></svg>
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- ============ БУРГЕР-МЕНЮ (второстепенные разделы) ============ -->
+<div class="header-drawer-backdrop" id="header-drawer-backdrop" hidden></div>
+<aside class="header-drawer" id="header-drawer" aria-label="Дополнительное меню" aria-hidden="true" hidden>
+  <div class="header-drawer-top">
+    <span class="header-drawer-title">Меню</span>
+    <button class="header-drawer-close" type="button" id="header-drawer-close" aria-label="Закрыть меню">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </div>
+  <nav class="header-drawer-nav" aria-label="Дополнительная навигация">
+    <a href="/about/">О бренде</a>
+    <a href="/enciklopediya/">Энциклопедия камней</a>
+    <a href="/podarki/">События и подарки</a>
+    <a href="/careers/">Вакансии</a>
+  </nav>
+</aside>
+
+<main>
+
+  <!-- ============ Топбар: хлебные крошки ============ -->
+  <nav class="topbar" aria-label="Хлебные крошки">
+    <p class="breadcrumbs">
+      <a href="/">Главная</a><span class="sep">→</span>
+      <span aria-current="page">Коллекции</span>
+    </p>
+  </nav>
+
+  <!-- ============ HERO ============ -->
+  <section class="enc-hero" id="hero-section" aria-label="Коллекции RINGO">
+    <p class="section-eyebrow"><span class="rule"></span><span class="txt">Авторские коллекции</span><span class="rule"></span></p>
+    <h1>Коллекции RINGO</h1>
+    <p>Каждая коллекция RINGO — самостоятельное высказывание: авторский дизайн, награды международных конкурсов, геммологическая экспертиза и золото собственной огранки. Мы не повторяем чужое — мы создаём визуальный язык, в котором металл продолжает камень, а украшение рассказывает историю.</p>
+  </section>
+
+  <!-- ============ Прямой ответ: что такое авторская коллекция ============ -->
+  <section class="enc-answer" aria-label="Что такое авторская ювелирная коллекция">
+    <div class="enc-answer-inner">
+      <p class="section-eyebrow"><span class="txt">Главное</span><span class="rule"></span></p>
+      <p>Авторская ювелирная коллекция — это серия украшений, объединённых единой дизайнерской идеей, стилистикой и техникой исполнения. В отличие от типовых изделий, авторская линейка создаётся под конкретный замысел: от эскиза и выбора камней до фирменной огранки и обработки металла. Каждая коллекция RINGO имеет собственную концепцию и узнаваемый пластический язык.</p>
+    </div>
+  </section>
+
+  <!-- ============ Раскрытие темы (2–3 абзаца, E-E-A-T) ============ -->
+  <section class="section" aria-label="Философия авторских коллекций">
+    <div class="stone-props">
+      <article>
+        <h3>Дизайн со смыслом</h3>
+        <p>У бренда нет украшений без высказывания. За каждой коллекцией стоит идея — от русского авангарда и античности до бионики и космоса. Форма собирается из осмысленных элементов, а не из декора ради декора.</p>
+      </article>
+      <article>
+        <h3>Техника и материал</h3>
+        <p>Рутенирование, сложные фактуры, полированные орнаменты и золото 999,9 пробы. Технологии RINGO позволяют металлу «ловить» свет и продолжать сияние камня, а не только удерживать его.</p>
+      </article>
+      <article>
+        <h3>Экспертиза и признание</h3>
+        <p>Камни проходят геммологическую экспертизу, а работы бренда отмечены наградами международных ювелирных конкурсов. Это гарантия того, что за эстетикой стоит подлинное качество.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ Сетка коллекций (авто-подбор из CMS) ============ -->
+  <section class="pairs" aria-label="Коллекции RINGO" data-conditional="collections">
+    <div class="pairs-head">
+      <p>Все коллекции</p>
+      <h2>Выберите коллекцию</h2>
+    </div>
+
+    <!-- Новинки и флагманы -->
+    <div class="pairs-block">
+      <h3>Новинки и флагманы</h3>
+      <div class="pairs-grid">
+        <a class="product-card stone-card" href="/collections/crystal/">
+          <div class="ph"><picture><img src="images/prod-kolco-catalog.jpg" alt="Коллекция Кристалл — украшения RINGO" width="440" height="440" fetchpriority="high" decoding="async"></picture></div>
+          <h3>Кристалл</h3>
+          <p>Эстетика безупречно огранённого камня, воплощённая в металле через рутенирование и чёрную глубину.</p>
+          <span class="card-more">Смотреть коллекцию →</span>
+        </a>
+        <a class="product-card stone-card" href="/collections/kamennyy-tsvetok/">
+          <div class="ph"><picture><img src="images/prod-pusety.jpg" alt="Коллекция Каменный цветок — украшения RINGO" width="440" height="440" loading="lazy" decoding="async"></picture></div>
+          <h3>Каменный цветок</h3>
+          <p>Тайные Сказы Бажова в украшениях: пластика формы и лаконичное сочетание золота и бриллиантов.</p>
+          <span class="card-more">Смотреть коллекцию →</span>
+        </a>
+        <a class="product-card stone-card" href="/collections/sverhnovaya/">
+          <div class="ph"><picture><img src="images/hero-ring-front.jpg" alt="Коллекция Сверхновая — украшения RINGO" width="440" height="440" loading="lazy" decoding="async"></picture></div>
+          <h3>Сверхновая</h3>
+          <p>Ода энергии Вселенной: авангардный дизайн о моменте рождения новой звезды и внутреннем свете.</p>
+          <span class="card-more">Смотреть коллекцию →</span>
+        </a>
+        <a class="product-card stone-card" href="/collections/sfera/">
+          <div class="ph"><picture><img src="images/prod-sergi.jpg" alt="Коллекция Сфера — украшения RINGO" width="440" height="440" loading="lazy" decoding="async"></picture></div>
+          <h3>Сфера</h3>
+          <p>Идеальные пропорции, которые работают и в ювелирном искусстве, и в геометрии Вселенной.</p>
+          <span class="card-more">Смотреть коллекцию →</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Классика и бриллианты -->
+    <div class="pairs-block">
+      <h3>Классика и бриллианты</h3>
+      <div class="pairs-grid">
+        <a class="product-card stone-card" href="/collections/diamond-classic/">
+          <div class="ph"><picture><img src="images/prod-kolco-catalog.jpg" alt="Коллекция Бриллиантовая классика — украшения RINGO" width="440" height="440" loading="lazy" decoding="async"></picture></div>
+          <h3>Бриллиантовая классика</h3>
+          <p>Идеи, не теряющие актуальности: выбор для тех, кто не гонится за модой, а покупает на долгий срок.</p>
+          <span class="card-more">Смотреть коллекцию →</span>
+        </a>
+        <a class="product-card stone-card" href="/collections/queen/">
+          <div class="ph"><picture><img src="images/hero-hand-finger.jpg" alt="Коллекция Королева — украшения RINGO" width="440" height="440" loading="lazy" decoding="async"></picture></div>
+          <h3>Королева</h3>
+          <p>Королевский силуэт имперской короны в белом золоте и бриллиантах — образ величия.</p>
+          <span class="card-more">Смотреть коллекцию →</span>
+        </a>
+        <a class="product-card stone-card" href="/collections/present/">
+          <div class="ph"><picture><img src="images/prod-pusety.jpg" alt="Коллекция Презент — украшения RINGO" width="440" height="440" loading="lazy" decoding="async"></picture></div>
+          <h3>Презент</h3>
+          <p>Золотая лента вьётся вокруг бриллианта — универсальное решение, уместное почти для любого случая.</p>
+          <span class="card-more">Смотреть коллекцию →</span>
+        </a>
+        <a class="product-card stone-card" href="/collections/eternal-story/">
+          <div class="ph"><picture><img src="images/hero-set.jpg" alt="Коллекция Вечная история — украшения RINGO" width="440" height="440" loading="lazy" decoding="async"></picture></div>
+          <h3>Вечная история</h3>
+          <p>Матовое, полуглянцевое золото со сложными фактурами — богатый язык о чувствах и обещаниях.</p>
+          <span class="card-more">Смотреть коллекцию →</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Цвет и камни -->
+    <div class="pairs-block">
+      <h3>Цвет и камни</h3>
+      <div class="pairs-grid">
+        <a class="product-card stone-card" href="/collections/coloured-classic/">
+          <div class="ph"><picture><img src="images/prod-sergi.jpg" alt="Коллекция Цветная классика — украшения RINGO" width="440" height="440" loading="lazy" decoding="async"></picture></div>
+          <h3>Цветная классика</h3>
+          <p>Изумруды, рубины, сапфиры как на старинном портрете — и при этом современно и легко в носке.</p>
+          <span class="card-more">Смотреть коллекцию →</span>
+        </a>
+        <a class="product-card stone-card" href="/collections/bridges/">
+          <div class="ph"><picture><img src="images/prod-braslet.jpg" alt="Коллекция Мосты — украшения RINGO" width="440" height="440" loading="lazy" decoding="async"></picture></div>
+          <h3>Мосты</h3>
+          <p>Цветные камни в рутениевой чаше светятся изнутри, а дуги бриллиантов подсвечивают центр.</p>
+          <span class="card-more">Смотреть коллекцию →</span>
+        </a>
+        <a class="product-card stone-card" href="/collections/symbol/">
+          <div class="ph"><picture><img src="images/prod-pusety.jpg" alt="Коллекция Символ — украшения RINGO" width="440" height="440" loading="lazy" decoding="async"></picture></div>
+          <h3>Символ</h3>
+          <p>Старорусская эстетика, солярные орнаменты и спрятанные изумруды — украшение-высказывание.</p>
+          <span class="card-more">Смотреть коллекцию →</span>
+        </a>
+        <a class="product-card stone-card" href="/collections/alilu/">
+          <div class="ph"><picture><img src="images/hero-ring-front.jpg" alt="Коллекция Алилу — украшения RINGO" width="440" height="440" loading="lazy" decoding="async"></picture></div>
+          <h3>Алилу</h3>
+          <p>Бионический дизайн с цветными сапфирами и почти звериной пластикой золота.</p>
+          <span class="card-more">Смотреть коллекцию →</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Характер и геометрия -->
+    <div class="pairs-block">
+      <h3>Характер и геометрия</h3>
+      <div class="pairs-grid">
+        <a class="product-card stone-card" href="/collections/red/">
+          <div class="ph"><picture><img src="images/prod-braslet.jpg" alt="Коллекция Красный квадрат — украшения RINGO" width="440" height="440" loading="lazy" decoding="async"></picture></div>
+          <h3>Красный квадрат</h3>
+          <p>Русский авангард в металле: простые геометрические элементы, ярко и динамично.</p>
+          <span class="card-more">Смотреть коллекцию →</span>
+        </a>
+        <a class="product-card stone-card" href="/collections/shoko/">
+          <div class="ph"><picture><img src="images/hero-hand-finger.jpg" alt="Коллекция ШОКО — украшения RINGO" width="440" height="440" loading="lazy" decoding="async"></picture></div>
+          <h3>ШОКО</h3>
+          <p>Ода женственности: плавные, элегантные линии, что обволакивают и подчёркивают грацию.</p>
+          <span class="card-more">Смотреть коллекцию →</span>
+        </a>
+        <a class="product-card stone-card" href="/collections/neuro/">
+          <div class="ph"><picture><img src="images/prod-kolco-catalog.jpg" alt="Коллекция Нейро — украшения RINGO" width="440" height="440" loading="lazy" decoding="async"></picture></div>
+          <h3>Нейро</h3>
+          <p>Нейроны, сплетённые в цепь: шарообразные формы, чаши с чернением и мерцающие бриллианты.</p>
+          <span class="card-more">Смотреть коллекцию →</span>
+        </a>
+        <a class="product-card stone-card" href="/collections/laurel/">
+          <div class="ph"><picture><img src="images/hero-set.jpg" alt="Коллекция Лавры — украшения RINGO" width="440" height="440" loading="lazy" decoding="async"></picture></div>
+          <h3>Лавры</h3>
+          <p>Античность в современности с подвижными элементами — напоминание, что вы победитель.</p>
+          <span class="card-more">Смотреть коллекцию →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Стилевые направления ============ -->
+  <section class="section cream-wide gift-section" aria-label="Стилевые направления" data-conditional="styles">
+    <div class="section-inner">
+      <header class="gift-head">
+        <p class="section-eyebrow"><span class="txt">По стилю</span><span class="rule"></span></p>
+        <h2>Стилевые направления</h2>
+        <p>Не знаете, с чего начать? Выберите близкое вам направление — и мы покажем коллекции, которые ему созвучны.</p>
+      </header>
+
+      <div class="gift-grid">
+        <a class="gift-card" href="/collections/?style=art-deco">
+          <span class="gift-ico" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3l4 6-4 6-4-6z"/><path d="M16 15l4 6-4 8-4-8z"/></svg>
+          </span>
+          <h3>Ар-деко</h3>
+          <p>Геометрия, симметрия и роскошь ар-деко — «Миллион», «Диско».</p>
+        </a>
+        <a class="gift-card" href="/collections/?style=modern">
+          <span class="gift-ico" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"><path d="M6 24c6-2 6-14 12-16 4-1.5 8 0 8 4 0 6-8 8-14 10"/></svg>
+          </span>
+          <h3>Модерн и Климт</h3>
+          <p>Текучее золото и орнамент — «Сецессион», «Роса».</p>
+        </a>
+        <a class="gift-card" href="/collections/?style=avangard">
+          <span class="gift-ico" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="6" width="9" height="9"/><path d="M18 18l8 8M18 26l8-8"/></svg>
+          </span>
+          <h3>Авангард и геометрия</h3>
+          <p>Форма из чистых элементов — «Красный квадрат», «Клетка».</p>
+        </a>
+        <a class="gift-card" href="/collections/?style=color">
+          <span class="gift-ico" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4l4 6-4 6-4-6z"/><circle cx="16" cy="22" r="5"/></svg>
+          </span>
+          <h3>Цвет и камни</h3>
+          <p>Изумруды, рубины, сапфиры — «Цветная классика», «Мосты».</p>
+        </a>
+        <a class="gift-card" href="/collections/?style=men">
+          <span class="gift-ico" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"><circle cx="16" cy="16" r="10"/><path d="M12 16h8M16 12v8"/></svg>
+          </span>
+          <h3>Мужская линия</h3>
+          <p>Весомая индивидуальность — «Мужская линия», «Эго».</p>
+        </a>
+        <a class="gift-card" href="/collections/?style=nature">
+          <span class="gift-ico" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"><path d="M16 27V13"/><path d="M16 17c-4 0-7-3-7-7 4 0 7 3 7 7zM16 15c3 0 6-2 6-6-4 0-6 3-6 6z"/></svg>
+          </span>
+          <h3>Природа и бионика</h3>
+          <p>Пластика живой природы — «Алилу», «Каменный цветок».</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Имидж-полоса: мир коллекций ============ -->
+  <section class="quote-banner" aria-label="Мир коллекций RINGO">
+    <div class="quote-inner">
+      <div class="bg"><picture><img src="images/quote-banner.jpg" alt="" aria-hidden="true" width="1600" height="900" loading="lazy" decoding="async"></picture></div>
+      <div class="shade" aria-hidden="true"></div>
+      <div class="quote-text">
+        <p class="section-eyebrow"><span class="txt">Мир коллекций RINGO</span><span class="rule"></span></p>
+        <blockquote>Каждая коллекция — отдельная история в золоте и камне. Найдите ту, что расскажет вашу.</blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ О бренде ============ -->
+  <section class="section" aria-label="О бренде RINGO">
+    <p class="section-eyebrow"><span class="txt">О бренде</span><span class="rule"></span></p>
+    <h2>Ювелирный дом RINGO</h2>
+    <p>Российский ювелирный бренд с собственным дизайн-бюро и производством. Мы создаём авторские коллекции из золота высшей пробы с бриллиантами и цветными камнями, отмеченные наградами международных конкурсов.</p>
+
+    <div class="stone-figures" aria-label="Ключевые цифры бренда">
+      <div class="figure-cell">
+        <strong>1993</strong>
+        <span>год основания бренда</span>
+      </div>
+      <div class="figure-cell">
+        <strong>30+</strong>
+        <span>авторских коллекций</span>
+      </div>
+      <div class="figure-cell">
+        <strong>999,9</strong>
+        <span>проба золота собственной огранки</span>
+      </div>
+    </div>
+
+    <div class="stone-props">
+      <article>
+        <h3>Собственный дизайн</h3>
+        <p>Каждая коллекция проходит путь от эскиза до готового изделия внутри бренда — без заимствований и типовых решений.</p>
+      </article>
+      <article>
+        <h3>Признание и экспертиза</h3>
+        <p>Награды международных ювелирных конкурсов и геммологическая экспертиза камней подтверждают уровень мастерства.</p>
+      </article>
+      <article>
+        <h3>Наследие Урала</h3>
+        <p>Бренд опирается на культуру и ювелирную традицию Урала, переосмысляя наследие в ультрасовременном дизайне.</p>
+      </article>
+    </div>
+
+    <p><a href="/about/">Подробнее о бренде →</a></p>
+  </section>
+
+</main>
+
+<!-- ============ ФУТЕР (светлый) ============ -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-cols">
+      <nav class="footer-col" aria-label="Клиентам">
+        <a href="/help/proverka-podlinnosti/">Проверка подлинности</a>
+        <a href="/loyalty/">Программа лояльности</a>
+        <a href="/help/uhod/">Уход за драгоценностями</a>
+        <a href="/diplomas/">Дипломы и сертификаты</a>
+        <a href="/gift-card/">Подарочный сертификат</a>
+      </nav>
+      <nav class="footer-col" aria-label="Компания">
+        <a href="/agent/">Агентское соглашение</a>
+        <a href="/careers/">Вакансии</a>
+        <a href="/help/dostavka/">Доставка и оплата</a>
+        <a href="/pdn/">Политика ПДН</a>
+        <a href="/help/oplata/">Процесс оплаты</a>
+      </nav>
+      <nav class="footer-col" aria-label="Юридическая информация">
+        <a href="/requisites/">Реквизиты</a>
+        <a href="/rules/">Правила продажи</a>
+        <a href="/consent/">Согласие на обработку ПД</a>
+        <a href="/notice/">Уведомление о постановке на учёт</a>
+      </nav>
+      <div class="footer-social">
+        <a href="/social/telegram/" aria-label="Telegram">tg</a>
+        <a href="/social/vk/" aria-label="VK">vk</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <img src="images/logo.png" alt="RINGO" width="90" height="30">
+      <span>© RINGO 1993—2026 · shop@ringo-jewelry.ru</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Контакт-кнопка -->
+<button class="contact-fab" type="button" aria-label="Связаться с нами">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 15a2 2 0 0 1-2 2H8l-4 4V6a2 2 0 0 1 2-2h13a2 2 0 0 1 2 2z"/></svg>
+</button>
+
+<script src="js/header.js"></script>
+</body>
+</html>

@@ -1,0 +1,357 @@
+/* =====================================================================
+   RINGO · Раздел «Магазины» — стили новых элементов
+   Дополняет ringo.css. Использует общие токены (:root в ringo.css).
+   Никаких инлайн-стилей; контентные теги (h1–h3, p) — без классов.
+   ===================================================================== */
+
+/* ---------- Общий враппер секций раздела (как section-inner) ---------- */
+.salons-wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--gutter-x);}
+.salons-narrow{max-width:var(--wrap-narrow);margin:0 auto;padding:0 var(--gutter-x);}
+
+/* ---------- SEO-интро раздела (переиспользуем .enc-answer, доп. нет) ---------- */
+
+/* ---------- Флагманские салоны ---------- */
+.flagships{padding:var(--section-y) 0 0;}
+.flagship-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:clamp(16px,1.8vw,26px);margin-top:clamp(24px,3vw,36px);
+}
+.flagship-card{
+  display:flex;flex-direction:column;
+  background:#fff;border:1px solid var(--line-soft);overflow:hidden;
+  transition:transform .4s var(--ease),box-shadow .4s var(--ease);
+}
+.flagship-card:hover{transform:translateY(-4px);box-shadow:0 16px 36px rgba(47,44,40,.12);}
+.flagship-media{
+  display:block;position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--placeholder);
+}
+.flagship-media img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease);}
+.flagship-card:hover .flagship-media img{transform:scale(1.05);}
+.flagship-badge{
+  position:absolute;left:14px;top:14px;
+  background:rgba(22,21,19,.82);color:#fff;
+  font-family:var(--font-body);font-size:10px;letter-spacing:.16em;text-transform:uppercase;
+  padding:6px 11px;
+}
+.flagship-body{display:flex;flex-direction:column;flex:1;padding:clamp(18px,1.8vw,24px);}
+.flagship-body h3{
+  font-family:var(--font-head);font-weight:500;font-size:clamp(19px,1.7vw,22px);
+  letter-spacing:.02em;line-height:1.2;color:var(--gold);margin:0 0 8px;
+}
+.flagship-body h3 a{color:inherit;text-decoration:none;}
+.flagship-card:hover .flagship-body h3 a{color:var(--gold-hover);}
+.flagship-body p{margin:0 0 16px;font-size:14px;line-height:1.55;color:var(--muted-2);}
+.flagship-open{
+  margin-top:auto;font-family:var(--font-body);font-size:12px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--gold);text-decoration:none;
+  border-bottom:1px solid transparent;transition:border-color .3s;align-self:flex-start;
+}
+.flagship-card:hover .flagship-open{border-color:var(--gold);}
+
+/* ---------- Общая карта сети ---------- */
+.salons-map-section{padding:var(--section-y) 0 0;}
+.salons-map{
+  position:relative;
+  width:100%;height:clamp(340px,52vh,560px);
+  border:1px solid var(--line);background:var(--placeholder);
+  margin-top:clamp(20px,2.6vw,32px);
+}
+.salons-map-note{margin-top:12px;font-size:13px;color:var(--muted-3);}
+/* Заглушка внутри контейнера карты (видна, пока карта не загрузилась;
+   JS удаляет её перед монтированием карты). Абсолютное позиционирование —
+   чтобы никогда не влиять на высоту/поток контейнера карты. */
+.salons-map-fallback{
+  position:absolute;inset:0;margin:0;
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--font-body);font-size:14px;color:var(--muted-3);text-align:center;padding:0 20px;
+}
+
+/* Балун Яндекс.Карт — ссылка «Подробнее» */
+.ymap-balloon-title{font-family:var(--font-head);font-size:16px;color:var(--ink);margin-bottom:4px;}
+.ymap-balloon-addr{font-size:13px;color:var(--muted-2);margin-bottom:8px;}
+.ymap-balloon-link{font-size:13px;color:var(--gold);text-decoration:none;}
+
+/* ---------- Панель фильтров ---------- */
+.salons-filter{padding:clamp(32px,4vw,52px) 0 0;}
+.salons-filter-bar{
+  display:flex;flex-wrap:wrap;align-items:center;gap:clamp(14px,2vw,26px);
+  padding-bottom:clamp(20px,2.4vw,28px);border-bottom:1px solid var(--line);
+}
+.salons-field{display:flex;flex-direction:column;gap:7px;}
+.salons-field-label{
+  font-family:var(--font-body);font-size:11px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--muted-3);
+}
+.salons-select{
+  appearance:none;-webkit-appearance:none;
+  min-width:220px;padding:12px 40px 12px 15px;
+  font-family:var(--font-body);font-size:15px;color:var(--ink);
+  background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='8' viewBox='0 0 14 8'%3E%3Cpath d='M.53.53 7 7l6.47-6.47' stroke='%23BA905A' stroke-width='1.2' fill='none'/%3E%3C/svg%3E") no-repeat right 15px center;
+  border:1px solid var(--line-16);border-radius:0;cursor:pointer;
+  transition:border-color .3s;
+}
+.salons-select:focus{outline:none;border-color:var(--gold);}
+
+/* Сегмент-переключатель */
+.salons-segment{display:inline-flex;border:1px solid var(--line-16);}
+.salons-segment button{
+  padding:11px 18px;font-family:var(--font-body);font-size:13px;letter-spacing:.02em;
+  color:var(--muted-2);background:#fff;border:0;border-right:1px solid var(--line-16);
+  cursor:pointer;transition:background .3s,color .3s;
+}
+.salons-segment button:last-child{border-right:0;}
+.salons-segment button.is-active{background:var(--ink);color:#fff;}
+
+/* Чекбокс «В моём городе» */
+.salons-geo{display:inline-flex;align-items:center;gap:9px;cursor:pointer;
+  font-family:var(--font-body);font-size:14px;color:var(--ink-2);align-self:flex-end;padding-bottom:11px;}
+.salons-geo input{width:16px;height:16px;accent-color:var(--gold);cursor:pointer;}
+
+/* ---------- Список магазинов по городам ---------- */
+.salons-list{padding:clamp(32px,4vw,52px) 0 0;}
+.salons-city-group{margin-bottom:clamp(36px,4vw,56px);}
+.salons-city-group[hidden]{display:none;}
+.salons-city-head{
+  display:flex;align-items:baseline;gap:14px;margin:0 0 clamp(18px,2vw,26px);
+}
+.salons-city-head h2{
+  font-family:var(--font-head);font-weight:500;font-size:clamp(21px,2vw,27px);
+  letter-spacing:.02em;color:var(--gold);margin:0;white-space:nowrap;
+}
+.salons-city-head h2 a{color:inherit;text-decoration:none;border-bottom:1px solid transparent;transition:border-color .3s;}
+.salons-city-head h2 a:hover{border-color:var(--gold);}
+.salons-city-head .rule{flex:1;height:1px;background:var(--line);}
+.salons-city-count{font-family:var(--font-body);font-size:13px;color:var(--muted-3);white-space:nowrap;}
+
+.salons-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(16px,1.8vw,26px);}
+
+.salon-card{
+  display:flex;flex-direction:column;
+  background:#fff;border:1px solid var(--line-soft);
+  padding:clamp(22px,2.2vw,30px);
+  transition:box-shadow .4s var(--ease),transform .4s var(--ease);
+}
+.salon-card[hidden]{display:none;}
+.salon-card:hover{box-shadow:0 14px 32px rgba(47,44,40,.1);transform:translateY(-3px);}
+.salon-card-type{
+  display:inline-flex;align-items:center;gap:7px;
+  font-family:var(--font-body);font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:12px;
+}
+.salon-card-type.is-partner{color:var(--muted-3);}
+.salon-card-type .star{width:6px;height:6px;background:var(--gold);border-radius:50%;display:inline-block;}
+.salon-card h3{
+  font-family:var(--font-head);font-weight:500;font-size:clamp(18px,1.6vw,21px);
+  letter-spacing:.02em;line-height:1.25;color:var(--ink);margin:0 0 12px;
+}
+.salon-card-lines{display:flex;flex-direction:column;gap:6px;margin-bottom:18px;}
+.salon-card-lines p{margin:0;font-size:14px;line-height:1.5;color:var(--muted-2);}
+.salon-card-lines a{color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--line);transition:color .3s,border-color .3s;}
+.salon-card-lines a:hover{color:var(--gold);border-color:var(--gold);}
+.salon-card-foot{margin-top:auto;display:flex;flex-wrap:wrap;align-items:center;gap:16px;}
+.salon-card-more{
+  font-family:var(--font-body);font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--gold);text-decoration:none;border-bottom:1px solid transparent;transition:border-color .3s;
+}
+.salon-card:hover .salon-card-more{border-color:var(--gold);}
+.salon-card-map{
+  font-family:var(--font-body);font-size:12px;letter-spacing:.06em;color:var(--muted-3);
+  border:0;background:none;cursor:pointer;padding:0;transition:color .3s;
+}
+.salon-card-map:hover{color:var(--gold);}
+
+.salons-empty{padding:40px 0;text-align:center;color:var(--muted-2);}
+.salons-empty[hidden]{display:none;}
+
+/* ---------- Города присутствия (чипсы) ---------- */
+/* Симметричный вертикальный ритм: секция «дышит» и снизу, чтобы
+   не прилипать к следующему блоку (напр. «Свяжитесь с нами»). */
+.cities-cloud{padding:var(--section-y) 0;}
+.cities-chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:clamp(20px,2.4vw,30px);}
+.cities-chips a{
+  display:inline-block;padding:9px 16px;
+  font-family:var(--font-body);font-size:14px;color:var(--ink-2);text-decoration:none;
+  border:1px solid var(--line-16);transition:border-color .3s,color .3s,background .3s;
+}
+.cities-chips a:hover{border-color:var(--gold);color:var(--gold);background:var(--cream);}
+
+/* =====================================================================
+   ПРОТОТИП 3 — карточка одного салона
+   ===================================================================== */
+
+/* Двухколоночный hero (по аналогии с карточкой товара) */
+.salon-hero{
+  display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(28px,4vw,64px);
+  max-width:var(--wrap);margin:0 auto;
+  padding:clamp(24px,3vw,44px) var(--gutter-x) 0;
+}
+
+/* Галерея */
+.salon-gallery{display:flex;flex-direction:column;gap:14px;}
+.salon-gallery-main{aspect-ratio:4/3;overflow:hidden;background:var(--placeholder);border:1px solid var(--line-soft);}
+.salon-gallery-main img{width:100%;height:100%;object-fit:cover;}
+.salon-gallery-thumbs{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;}
+.salon-thumb{aspect-ratio:1/1;overflow:hidden;background:var(--placeholder);border:1px solid var(--line-soft);
+  cursor:pointer;padding:0;transition:border-color .3s;}
+.salon-thumb img{width:100%;height:100%;object-fit:cover;}
+.salon-thumb.is-active{border-color:var(--gold);}
+
+/* Инфо-колонка */
+.salon-info{display:flex;flex-direction:column;}
+.salon-info-badge{
+  display:inline-flex;align-items:center;gap:8px;align-self:flex-start;
+  font-family:var(--font-body);font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--gold);border:1px solid var(--line-16);padding:7px 13px;margin-bottom:18px;
+}
+.salon-info-badge.is-partner{color:var(--muted-3);}
+.salon-info h1{
+  font-family:var(--font-head);font-weight:500;font-size:clamp(26px,3vw,40px);
+  letter-spacing:.01em;line-height:1.14;color:var(--ink);margin:0 0 20px;
+}
+.salon-info-addr{margin:0 0 6px;font-size:16px;line-height:1.6;color:var(--body-2);}
+.salon-info-phone{margin:0 0 22px;}
+.salon-info-phone a{font-family:var(--font-head);font-size:22px;color:var(--ink);letter-spacing:.02em;text-decoration:none;}
+.salon-info-phone a:hover{color:var(--gold);}
+
+/* Часы работы — таблица по дням */
+.salon-hours{width:100%;border-collapse:collapse;margin:0 0 26px;}
+.salon-hours caption{
+  text-align:left;font-family:var(--font-body);font-size:11px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--muted-3);margin-bottom:10px;
+}
+.salon-hours th,.salon-hours td{
+  padding:8px 0;font-family:var(--font-body);font-size:14px;text-align:left;
+  border-bottom:1px solid var(--line-soft);
+}
+.salon-hours th{font-weight:400;color:var(--muted-2);width:45%;}
+.salon-hours td{color:var(--ink-2);}
+.salon-hours tr.is-today th,.salon-hours tr.is-today td{color:var(--gold);}
+
+/* Кнопки действий салона */
+.salon-actions{display:flex;flex-direction:column;gap:12px;margin-bottom:20px;}
+.salon-btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  padding:15px 22px;font-family:var(--font-body);font-size:14px;letter-spacing:.06em;
+  text-align:center;text-decoration:none;transition:background .3s,color .3s,border-color .3s;cursor:pointer;
+}
+.salon-btn svg{width:18px;height:18px;flex:none;}
+.salon-btn-primary{background:var(--ink);color:#fff;border:1px solid var(--ink);}
+.salon-btn-primary:hover{background:var(--gold);border-color:var(--gold);}
+.salon-btn-secondary{background:#fff;color:var(--ink);border:1px solid var(--line-16);}
+.salon-btn-secondary:hover{border-color:var(--gold);color:var(--gold);}
+.salon-tg{
+  display:inline-flex;align-items:center;gap:8px;align-self:flex-start;
+  font-family:var(--font-body);font-size:13px;letter-spacing:.04em;color:var(--gold);
+  text-decoration:none;border-bottom:1px solid transparent;transition:border-color .3s;
+}
+.salon-tg:hover{border-color:var(--gold);}
+.salon-tg svg{width:16px;height:16px;}
+
+/* Карта одного салона */
+.salon-map{width:100%;height:clamp(320px,44vh,480px);border:1px solid var(--line);background:var(--placeholder);}
+
+/* Блок «О салоне» — текст в 2 колонки на десктопе */
+.salon-about{max-width:var(--wrap-narrow);}
+.salon-about-text{column-count:2;column-gap:clamp(28px,4vw,56px);}
+.salon-about-text p{margin:0 0 16px;break-inside:avoid;}
+
+/* Услуги — плашки с иконками */
+.salon-services-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(14px,1.8vw,24px);
+  margin-top:clamp(22px,2.6vw,34px);
+}
+.salon-service{
+  display:flex;flex-direction:column;gap:12px;
+  padding:clamp(20px,2vw,26px);background:#fff;border:1px solid var(--line-soft);
+}
+.salon-service .ico{color:var(--gold);}
+.salon-service .ico svg{width:30px;height:30px;}
+.salon-service h3{
+  font-family:var(--font-head);font-weight:500;font-size:17px;letter-spacing:.02em;
+  color:var(--ink);margin:0;
+}
+.salon-service p{margin:0;font-size:13.5px;line-height:1.55;color:var(--muted-2);}
+.salon-service a{color:var(--gold);text-decoration:none;border-bottom:1px solid transparent;transition:border-color .3s;}
+.salon-service a:hover{border-color:var(--gold);}
+
+/* Как добраться */
+.salon-route p{max-width:70ch;}
+
+/* Ссылка на отзывы Яндекс.Карт */
+.salon-reviews-link{
+  display:inline-flex;align-items:center;gap:9px;
+  font-family:var(--font-body);font-size:14px;letter-spacing:.04em;color:var(--gold);
+  text-decoration:none;border-bottom:1px solid transparent;transition:border-color .3s;
+}
+.salon-reviews-link:hover{border-color:var(--gold);}
+.salon-reviews-link svg{width:18px;height:18px;}
+
+/* Финальный CTA-плашка */
+.salon-cta{
+  max-width:var(--wrap);margin:var(--section-y) auto 0;
+  padding:clamp(32px,4vw,56px) var(--gutter-x);
+  background:var(--dark);color:#fff;
+}
+.salon-cta-inner{
+  display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;
+  gap:clamp(20px,3vw,40px);max-width:var(--wrap-narrow);margin:0 auto;
+}
+.salon-cta-info p{margin:0 0 6px;font-size:15px;color:rgba(255,255,255,.78);}
+.salon-cta-info p:first-child{
+  font-family:var(--font-head);font-size:clamp(20px,2vw,26px);color:#fff;margin-bottom:12px;letter-spacing:.02em;
+}
+.salon-cta-btns{display:flex;flex-wrap:wrap;gap:12px;}
+.salon-cta-btns .salon-btn-primary{background:var(--gold);border-color:var(--gold);}
+.salon-cta-btns .salon-btn-primary:hover{background:var(--gold-hover);border-color:var(--gold-hover);}
+.salon-cta-btns .salon-btn-secondary{background:transparent;color:#fff;border-color:rgba(255,255,255,.4);}
+.salon-cta-btns .salon-btn-secondary:hover{border-color:var(--gold);color:var(--gold);}
+
+/* =====================================================================
+   ПРОТОТИП 2 — страница города: схема резерва
+   ===================================================================== */
+.reserve-steps{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(18px,2.4vw,34px);
+  margin-top:clamp(24px,3vw,38px);
+  list-style:none;padding:0;
+}
+.reserve-step{position:relative;padding-top:20px;}
+.reserve-step .num{
+  font-family:var(--font-head);font-size:clamp(34px,4vw,52px);color:var(--gold);
+  line-height:1;display:block;margin-bottom:14px;
+}
+.reserve-step h3{
+  font-family:var(--font-head);font-weight:500;font-size:19px;letter-spacing:.02em;
+  color:var(--ink);margin:0 0 8px;
+}
+.reserve-step p{margin:0;font-size:14px;line-height:1.6;color:var(--muted-2);}
+.reserve-cta{margin-top:clamp(24px,3vw,36px);}
+.reserve-cta a{
+  display:inline-block;padding:14px 30px;background:var(--ink);color:#fff;
+  font-family:var(--font-body);font-size:14px;letter-spacing:.06em;text-decoration:none;transition:background .3s;
+}
+.reserve-cta a:hover{background:var(--gold);}
+
+/* ---------- Стыки секций раздела (убираем двойной вертикальный воздух) ----------
+   Секции раздела заданы с верхним паддингом; когда встречаются секции,
+   у которых уже есть собственный верхний/нижний --section-y, гасим лишний. */
+.section + .cities-cloud{padding-top:0;}
+
+/* ---------- Адаптив ---------- */
+@media (max-width:1024px){
+  .flagship-grid{grid-template-columns:repeat(2,1fr);}
+  .salon-services-grid{grid-template-columns:repeat(2,1fr);}
+}
+@media (max-width:860px){
+  .salon-hero{grid-template-columns:1fr;}
+  .salon-about-text{column-count:1;}
+}
+@media (max-width:640px){
+  .salons-grid{grid-template-columns:1fr;}
+  .flagship-grid{grid-template-columns:1fr;}
+  .salon-services-grid{grid-template-columns:1fr;}
+  .reserve-steps{grid-template-columns:1fr;}
+  .salons-filter-bar{flex-direction:column;align-items:stretch;}
+  .salons-select{min-width:0;width:100%;}
+  .salons-geo{align-self:flex-start;padding-bottom:0;}
+  .salon-cta-inner{flex-direction:column;align-items:flex-start;}
+}

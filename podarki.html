@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ювелирные подарки — по поводу, адресату и камню | RINGO</title>
+<meta name="description" content="Ювелирные подарки RINGO: подберите украшение по поводу (годовщина, помолвка, 8 Марта, день рождения), по адресату (жене, маме, девушке) или по камню. Гид по выбору и подарочные сертификаты.">
+<link rel="canonical" href="https://ringo.example/podarki/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Ювелирные подарки — по поводу, адресату и камню | RINGO">
+<meta property="og:description" content="Подберите ювелирный подарок по поводу, адресату или камню. Гид по выбору украшения и подарочные сертификаты RINGO.">
+<meta property="og:image" content="https://ringo.example/images/hero-set.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="675">
+<meta property="og:url" content="https://ringo.example/podarki/">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext y='26' font-size='26' font-family='serif' fill='%23BA905A'%3ER%3C/text%3E%3C/svg%3E">
+
+<!-- Шрифты -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Unicase:wght@500;600;700&family=Spectral:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/ringo.css">
+
+<!-- JSON-LD: CollectionPage + BreadcrumbList -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"CollectionPage",
+  "name":"Ювелирные подарки",
+  "description":"Раздел ювелирных подарков RINGO: подбор по поводу, адресату и камню, гид по выбору и подарочные сертификаты.",
+  "url":"https://ringo.example/podarki/",
+  "breadcrumb":{
+    "@type":"BreadcrumbList",
+    "itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Главная","item":"https://ringo.example/"},
+      {"@type":"ListItem","position":2,"name":"Подарки"}
+    ]
+  }
+}
+</script>
+<!-- JSON-LD: HowTo — как выбрать украшение в подарок -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"HowTo",
+  "name":"Как выбрать украшение в подарок",
+  "description":"Пошаговый гид по выбору ювелирного подарка.",
+  "step":[
+    {"@type":"HowToStep","position":1,"name":"Определите повод и адресата","text":"От повода и того, кому предназначен подарок, зависит формат украшения: помолвочное кольцо, серьги на годовщину или подвеска ко дню рождения."},
+    {"@type":"HowToStep","position":2,"name":"Выберите тип украшения","text":"Кольца требуют знания размера, серьги и подвески — универсальны и подходят почти всем. Если сомневаетесь в размере, выбирайте серьги или колье."},
+    {"@type":"HowToStep","position":3,"name":"Определитесь с металлом и камнем","text":"Ориентируйтесь на привычные украшения адресата: жёлтое, белое или розовое золото, классический бриллиант или цветной камень под настроение."},
+    {"@type":"HowToStep","position":4,"name":"Заложите бюджет","text":"Определите комфортную сумму заранее. В каждом поводе есть варианты от лаконичных до статусных — это помогает быстро сузить выбор."},
+    {"@type":"HowToStep","position":5,"name":"Если сомневаетесь — подарочный сертификат","text":"Когда сложно угадать вкус, подарите сертификат: получатель сам выберет украшение, а вы сохраните эффект сюрприза."}
+  ]
+}
+</script>
+</head>
+<body>
+
+<!-- ============ ШАПКА ============ -->
+<header class="site-header">
+  <div class="header-accent"></div>
+
+  <div class="header-logo-row">
+    <a class="header-logo" href="/" aria-label="RINGO — на главную">
+      <img src="images/logo.png" alt="RINGO" width="120" height="46">
+    </a>
+  </div>
+
+  <div class="header-nav-row">
+    <button class="header-burger" type="button" id="header-burger" aria-label="Открыть меню" aria-expanded="false" aria-controls="header-drawer">
+      <span class="header-burger-lines" aria-hidden="true"><span></span><span></span><span></span></span>
+    </button>
+    <nav class="header-nav" aria-label="Основная навигация">
+      <a href="/catalog/">Ювелирные украшения</a>
+      <a href="/collections/">Коллекции</a>
+      <a href="/exclusive/">Эксклюзив</a>
+      <a href="/sale/">Акции</a>
+      <a href="/salons/">Магазины</a>
+    </nav>
+    <div class="header-icons">
+      <a href="tel:+74950000000" aria-label="Позвонить">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M5 4h3.5l1.8 4.5-2.2 1.6a12 12 0 005.2 5.2l1.6-2.2L21 16v3.5a1.5 1.5 0 01-1.6 1.5A16.5 16.5 0 013.5 5.6 1.5 1.5 0 015 4z" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="/search/" aria-label="Поиск">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="10.5" cy="10.5" r="6.5"/><line x1="15.5" y1="15.5" x2="20.5" y2="20.5" stroke-linecap="round"/></svg>
+      </a>
+      <a href="/account/" aria-label="Личный кабинет">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="12" cy="8" r="4"/><path d="M4.5 20.5c0-4 3.4-6.5 7.5-6.5s7.5 2.5 7.5 6.5" stroke-linecap="round"/></svg>
+      </a>
+      <a href="/wishlist/" aria-label="Избранное">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20.3l-1.45-1.32C5.7 14.6 3 12.1 3 9 3 6.5 5 4.5 7.5 4.5c1.4 0 2.75.65 3.6 1.7l.9 1.1.9-1.1c.85-1.05 2.2-1.7 3.6-1.7C19 4.5 21 6.5 21 9c0 3.1-2.7 5.6-7.55 9.98L12 20.3z"/></svg>
+      </a>
+      <a href="/cart/" aria-label="Корзина">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M7 9h10l-.62 10.55a1 1 0 01-1 .95H8.62a1 1 0 01-1-.95L7 9z"/><path d="M9.3 9V7.5a2.7 2.7 0 015.4 0V9"/></svg>
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- ============ БУРГЕР-МЕНЮ (второстепенные разделы) ============ -->
+<div class="header-drawer-backdrop" id="header-drawer-backdrop" hidden></div>
+<aside class="header-drawer" id="header-drawer" aria-label="Дополнительное меню" aria-hidden="true" hidden>
+  <div class="header-drawer-top">
+    <span class="header-drawer-title">Меню</span>
+    <button class="header-drawer-close" type="button" id="header-drawer-close" aria-label="Закрыть меню">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </div>
+  <nav class="header-drawer-nav" aria-label="Дополнительная навигация">
+    <a href="/about/">О бренде</a>
+    <a href="/enciklopediya/">Энциклопедия камней</a>
+    <a href="/podarki/">События и подарки</a>
+    <a href="/careers/">Вакансии</a>
+  </nav>
+</aside>
+
+<main>
+
+  <!-- ============ Топбар: хлебные крошки ============ -->
+  <nav class="topbar" aria-label="Хлебные крошки">
+    <p class="breadcrumbs">
+      <a href="/">Главная</a><span class="sep">→</span>
+      <span aria-current="page">Подарки</span>
+    </p>
+  </nav>
+
+  <!-- ============ HERO ============ -->
+  <section class="enc-hero" id="hero-section" aria-label="Ювелирные подарки">
+    <p class="section-eyebrow"><span class="rule"></span><span class="txt">Подарки RINGO</span><span class="rule"></span></p>
+    <h1>Ювелирные подарки</h1>
+    <p>Украшение остаётся с человеком на годы и хранит память о том, кто его подарил. Выберите подарок по поводу, по адресату или по камню — а если сомневаетесь во вкусе, оформите подарочный сертификат и оставьте выбор за получателем.</p>
+  </section>
+
+  <!-- ============ Ключевая визуальная композиция (имидж-полоса) ============ -->
+  <section class="gift-hero-media" aria-label="Украшения RINGO в подарок">
+    <figure>
+      <picture><img src="images/hero-set.jpg" alt="Комплект ювелирных украшений RINGO — идея подарка" width="1600" height="760" fetchpriority="high" decoding="async"></picture>
+    </figure>
+  </section>
+
+  <!-- ============ Прямой ответ (под нейро-ответы) ============ -->
+  <section class="enc-answer" aria-label="Главное о выборе подарка">
+    <div class="enc-answer-inner">
+      <p class="section-eyebrow"><span class="txt">Главное</span><span class="rule"></span></p>
+      <p>Чтобы выбрать ювелирный подарок, отталкивайтесь от повода и адресата: они определяют формат украшения. Серьги и подвески универсальны и не требуют размера, кольца — более личный выбор. Ориентируйтесь на привычный металл и камень получателя и заложите комфортный бюджет. Если угадать вкус сложно — подарите сертификат.</p>
+    </div>
+  </section>
+
+  <!-- ============ По поводу (справочник поводов из CMS) ============ -->
+  <section class="section gift-section" aria-label="Подарки по поводу" data-conditional="occasions">
+    <header class="gift-head">
+      <p class="section-eyebrow"><span class="txt">По поводу</span><span class="rule"></span></p>
+      <h2>Подарок к событию</h2>
+      <p>Крупные поводы, к которым чаще всего выбирают украшение. Каждая плашка ведёт на страницу события с готовыми идеями.</p>
+    </header>
+
+    <div class="occasion-grid">
+      <a class="occasion-card is-featured" href="/podarki/godovshchina-svadby/">
+        <div class="ph"><picture><img src="images/hero-hand-finger.jpg" alt="Годовщина свадьбы — украшение в подарок RINGO" width="900" height="700" loading="lazy" decoding="async"></picture></div>
+        <div class="occasion-cap">
+          <h3>Годовщина свадьбы</h3>
+          <p>От ситца до бриллианта — украшение к каждой годовщине вашей истории. Отдельный хаб с идеями под каждый год.</p>
+          <span class="card-more">Выбрать по году →</span>
+        </div>
+      </a>
+      <a class="occasion-card" href="/podarki/pomolvka/">
+        <div class="ph"><picture><img src="images/prod-kolco-catalog.jpg" alt="Помолвка — помолвочное кольцо RINGO" width="600" height="600" loading="lazy" decoding="async"></picture></div>
+        <div class="occasion-cap">
+          <h3>Помолвка</h3>
+          <p>Помолвочные кольца с бриллиантом — символ обещания на всю жизнь.</p>
+        </div>
+      </a>
+      <a class="occasion-card" href="/podarki/8-marta/">
+        <div class="ph"><picture><img src="images/prod-sergi.jpg" alt="8 Марта — серьги в подарок RINGO" width="600" height="600" loading="lazy" decoding="async"></picture></div>
+        <div class="occasion-cap">
+          <h3>8 Марта</h3>
+          <p>Весенний повод порадовать украшением — от лаконичных серёг до колец.</p>
+        </div>
+      </a>
+      <a class="occasion-card" href="/podarki/14-fevralya/">
+        <div class="ph"><picture><img src="images/model-portrait.jpg" alt="14 февраля — украшение в подарок RINGO" width="600" height="600" loading="lazy" decoding="async"></picture></div>
+        <div class="occasion-cap">
+          <h3>14 февраля</h3>
+          <p>Романтичный жест ко Дню всех влюблённых — украшение с сердцем истории.</p>
+        </div>
+      </a>
+      <a class="occasion-card" href="/podarki/den-rozhdeniya/">
+        <div class="ph"><picture><img src="images/prod-pusety.jpg" alt="День рождения — украшение в подарок RINGO" width="600" height="600" loading="lazy" decoding="async"></picture></div>
+        <div class="occasion-cap">
+          <h3>День рождения</h3>
+          <p>Универсальный повод: серьги, подвески и кольца на любой вкус и бюджет.</p>
+        </div>
+      </a>
+      <a class="occasion-card" href="/podarki/yubiley/">
+        <div class="ph"><picture><img src="images/hero-ring-front.jpg" alt="Юбилей — статусное украшение RINGO" width="600" height="600" loading="lazy" decoding="async"></picture></div>
+        <div class="occasion-cap">
+          <h3>Юбилей</h3>
+          <p>Статусные украшения к круглой дате — акцент на весе и качестве камня.</p>
+        </div>
+      </a>
+      <a class="occasion-card" href="/podarki/novyy-god/">
+        <div class="ph"><picture><img src="images/hero-set.jpg" alt="Новый год — украшение в подарок RINGO" width="600" height="600" loading="lazy" decoding="async"></picture></div>
+        <div class="occasion-cap">
+          <h3>Новый год</h3>
+          <p>Праздничный сюрприз под ёлку — от блеска бриллианта до тёплого золота.</p>
+        </div>
+      </a>
+      <a class="occasion-card" href="/podarki/den-materi/">
+        <div class="ph"><picture><img src="images/prod-braslet.jpg" alt="День матери — украшение в подарок RINGO" width="600" height="600" loading="lazy" decoding="async"></picture></div>
+        <div class="occasion-cap">
+          <h3>День матери</h3>
+          <p>Благодарность самому близкому человеку — украшение с семейной ценностью.</p>
+        </div>
+      </a>
+      <a class="occasion-card" href="/podarki/rozhdenie-rebenka/">
+        <div class="ph"><picture><img src="images/prod-kolco-catalog.jpg" alt="Рождение ребёнка — украшение в подарок RINGO" width="600" height="600" loading="lazy" decoding="async"></picture></div>
+        <div class="occasion-cap">
+          <h3>Рождение ребёнка</h3>
+          <p>Памятный подарок маме — украшение в честь нового человека в семье.</p>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ============ По адресату (справочник адресатов из CMS) ============ -->
+  <section class="section cream-wide gift-section" aria-label="Подарки по адресату" data-conditional="recipients">
+    <div class="section-inner">
+      <header class="gift-head">
+        <p class="section-eyebrow"><span class="txt">По адресату</span><span class="rule"></span></p>
+        <h2>Кому дарим</h2>
+        <p>Готовые подборки украшений под конкретного человека — с учётом привычек и характера.</p>
+      </header>
+
+      <div class="gift-grid">
+        <a class="gift-card" href="/podarki/zhene/">
+          <span class="gift-ico" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"><path d="M16 27C8 21 4 16.5 4 11.5 4 8 6.7 5.5 10 5.5c2.2 0 4.3 1.1 6 3 1.7-1.9 3.8-3 6-3 3.3 0 6 2.5 6 6C28 16.5 24 21 16 27z"/></svg>
+          </span>
+          <h3>Жене</h3>
+          <p>Знак внимания к годовщине или без повода — украшение на каждый день.</p>
+        </a>
+        <a class="gift-card" href="/podarki/mame/">
+          <span class="gift-ico" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"><path d="M6 25l3-13 7 6 7-6 3 13z"/><circle cx="16" cy="7" r="2.5"/><circle cx="7" cy="10" r="2"/><circle cx="25" cy="10" r="2"/></svg>
+          </span>
+          <h3>Маме</h3>
+          <p>Классические и тёплые украшения, которые носят с любовью годами.</p>
+        </a>
+        <a class="gift-card" href="/podarki/devushke/">
+          <span class="gift-ico" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4l3.2 8.3L28 13l-6.5 5.4L23.8 27 16 22.2 8.2 27l2.3-8.6L4 13l8.8-.7z"/></svg>
+          </span>
+          <h3>Девушке</h3>
+          <p>Романтичный жест ко дню рождения, юбилею отношений или просто так.</p>
+        </a>
+        <a class="gift-card" href="/podarki/lyubimoy-zhenshchine/">
+          <span class="gift-ico" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"><path d="M16 28C9 22.5 5 18 5 12.8 5 9.6 7.3 7 10.4 7c2 0 3.9 1 5.6 3 1.7-2 3.6-3 5.6-3C24.7 7 27 9.6 27 12.8 27 18 23 22.5 16 28z"/><path d="M16 13l1.4 2.8 3 .4-2.2 2.1.5 3-2.7-1.4-2.7 1.4.5-3-2.2-2.1 3-.4z"/></svg>
+          </span>
+          <h3>Любимой женщине</h3>
+          <p>Значимый подарок с камнем — украшение, которое говорит о чувствах.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ По камню (инвестиционный подарок) ============ -->
+  <section class="pairs" aria-label="Подарки по камню">
+    <div class="pairs-head">
+      <p>По камню</p>
+      <h2>Подарок с драгоценным камнем</h2>
+    </div>
+
+    <div class="pairs-block">
+      <div class="pairs-grid">
+        <a class="product-card stone-card" href="/catalog/s-brilliantom/">
+          <div class="ph"><picture><img src="images/prod-kolco-catalog.jpg" alt="Украшения с бриллиантом — подарок RINGO" width="440" height="440" loading="lazy" decoding="async"></picture></div>
+          <h3>Бриллиант</h3>
+          <p>Классика и статус: подарок, который не теряет ценности со временем.</p>
+          <span class="card-more">Витрина с бриллиантом →</span>
+        </a>
+        <a class="product-card stone-card" href="/catalog/s-izumrudom/">
+          <div class="ph"><picture><img src="images/prod-pusety.jpg" alt="Украшения с изумрудом — подарок RINGO" width="440" height="440" loading="lazy" decoding="async"></picture></div>
+          <h3>Изумруд</h3>
+          <p>Насыщенный зелёный камень — выразительный и запоминающийся подарок.</p>
+          <span class="card-more">Витрина с изумрудом →</span>
+        </a>
+        <a class="product-card stone-card" href="/catalog/s-sapfirom/">
+          <div class="ph"><picture><img src="images/prod-sergi.jpg" alt="Украшения с сапфиром — подарок RINGO" width="440" height="440" loading="lazy" decoding="async"></picture></div>
+          <h3>Сапфир</h3>
+          <p>Глубокий синий корунд, символ мудрости и постоянства чувств.</p>
+          <span class="card-more">Витрина с сапфиром →</span>
+        </a>
+        <a class="product-card stone-card" href="/catalog/s-rubinom/">
+          <div class="ph"><picture><img src="images/prod-braslet.jpg" alt="Украшения с рубином — подарок RINGO" width="440" height="440" loading="lazy" decoding="async"></picture></div>
+          <h3>Рубин</h3>
+          <p>Красный корунд — страстный и статусный подарок к особой дате.</p>
+          <span class="card-more">Витрина с рубином →</span>
+        </a>
+        <a class="product-card stone-card" href="/catalog/redkie-kamni/">
+          <div class="ph"><picture><img src="images/hero-ring-front.jpg" alt="Украшения с редкими камнями — подарок RINGO" width="440" height="440" loading="lazy" decoding="async"></picture></div>
+          <h3>Редкие камни</h3>
+          <p>Демантоид, танзанит, тсаворит — коллекционный подарок для ценителя.</p>
+          <span class="card-more">Витрина редких камней →</span>
+        </a>
+      </div>
+      <p><a href="/enciklopediya/">Узнать о камнях в энциклопедии →</a></p>
+    </div>
+  </section>
+
+  <!-- ============ Как выбрать украшение в подарок (HowTo) ============ -->
+  <section class="section" aria-label="Как выбрать украшение в подарок">
+    <p class="section-eyebrow"><span class="txt">Гид</span><span class="rule"></span></p>
+    <h2>Как выбрать украшение в подарок</h2>
+    <p>Коротко: отталкивайтесь от повода и адресата, выберите тип украшения (серьги и подвески универсальны, кольца требуют размера), ориентируйтесь на привычный металл и камень получателя и заложите бюджет. Если сомневаетесь — подарочный сертификат. Пошагово ниже.</p>
+
+    <ol class="enc-howto">
+      <li>
+        <h3>Определите повод и адресата</h3>
+        <p>Повод и то, кому предназначен подарок, задают формат украшения: помолвочное кольцо, серьги на годовщину или подвеска ко дню рождения.</p>
+      </li>
+      <li>
+        <h3>Выберите тип украшения</h3>
+        <p>Серьги и подвески подходят почти всем и не требуют знания размера. Кольца — более личный выбор; если не уверены в размере, начните с серёг или колье.</p>
+      </li>
+      <li>
+        <h3>Определитесь с металлом и камнем</h3>
+        <p>Присмотритесь к тому, что человек уже носит: жёлтое, белое или розовое золото, классический бриллиант или цветной камень под характер.</p>
+      </li>
+      <li>
+        <h3>Заложите бюджет</h3>
+        <p>Определите комфортную сумму заранее — в каждом поводе есть варианты от лаконичных до статусных, и это помогает быстро сузить выбор.</p>
+      </li>
+      <li>
+        <h3>Сомневаетесь — дарите сертификат</h3>
+        <p>Когда сложно угадать вкус, подарочный сертификат оставляет выбор за получателем и сохраняет эффект приятного сюрприза.</p>
+      </li>
+    </ol>
+  </section>
+
+  <!-- ============ Подарочные сертификаты (если реализовано) ============ -->
+  <section class="section cream-wide" aria-label="Подарочные сертификаты" data-conditional="giftcard">
+    <div class="section-inner">
+      <p class="section-eyebrow"><span class="txt">Если сложно выбрать</span><span class="rule"></span></p>
+      <h2>Подарочный сертификат RINGO</h2>
+      <p>Беспроигрышный вариант, когда хочется подарить украшение, но трудно угадать вкус или размер. Получатель сам выберет изделие в салоне или на сайте, а вы подарите не конкретную вещь, а возможность и внимание.</p>
+
+      <div class="gift-features">
+        <article>
+          <h3>Любой номинал</h3>
+          <p>Сертификат оформляется на удобную сумму и действует на весь ассортимент RINGO — от серёг до помолвочных колец.</p>
+        </article>
+        <article>
+          <h3>Электронно или на карте</h3>
+          <p>Пришлём красиво оформленный электронный сертификат или подготовим физическую карту в фирменной упаковке.</p>
+        </article>
+        <article>
+          <h3>Без спешки с выбором</h3>
+          <p>Долгий срок действия: получатель спокойно подберёт украшение тогда, когда будет к этому готов.</p>
+        </article>
+      </div>
+
+      <p><a href="/gift-card/">Оформить подарочный сертификат →</a></p>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ ФУТЕР (светлый) ============ -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-cols">
+      <nav class="footer-col" aria-label="Клиентам">
+        <a href="/help/proverka-podlinnosti/">Проверка подлинности</a>
+        <a href="/loyalty/">Программа лояльности</a>
+        <a href="/help/uhod/">Уход за драгоценностями</a>
+        <a href="/diplomas/">Дипломы и сертификаты</a>
+        <a href="/gift-card/">Подарочный сертификат</a>
+      </nav>
+      <nav class="footer-col" aria-label="Компания">
+        <a href="/agent/">Агентское соглашение</a>
+        <a href="/careers/">Вакансии</a>
+        <a href="/help/dostavka/">Доставка и оплата</a>
+        <a href="/pdn/">Политика ПДН</a>
+        <a href="/help/oplata/">Процесс оплаты</a>
+      </nav>
+      <nav class="footer-col" aria-label="Юридическая информация">
+        <a href="/requisites/">Реквизиты</a>
+        <a href="/rules/">Правила продажи</a>
+        <a href="/consent/">Согласие на обработку ПД</a>
+        <a href="/notice/">Уведомление о постановке на учёт</a>
+      </nav>
+      <div class="footer-social">
+        <a href="/social/telegram/" aria-label="Telegram">tg</a>
+        <a href="/social/vk/" aria-label="VK">vk</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <img src="images/logo.png" alt="RINGO" width="90" height="30">
+      <span>© RINGO 1993—2026 · shop@ringo-jewelry.ru</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Контакт-кнопка -->
+<button class="contact-fab" type="button" aria-label="Связаться с нами">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 15a2 2 0 0 1-2 2H8l-4 4V6a2 2 0 0 1 2-2h13a2 2 0 0 1 2 2z"/></svg>
+</button>
+
+<script src="js/header.js"></script>
+</body>
+</html>

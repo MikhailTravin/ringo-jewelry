@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RINGO — прототипы страниц | Презентация для клиента</title>
+<meta name="description" content="Обзор прототипов страниц RINGO: карточки товара, каталог, коллекции, энциклопедия камней и подарки. Откройте любой прототип в браузере.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Unicase:wght@400;500;600&family=Spectral:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#2F2C28;
+    --ink-2:#5A534B;
+    --muted-2:#7A7268;
+    --gray-title:#b3a896;
+    --gold:#BA905A;
+    --gold-hover:#c79a5f;
+    --cream:#faf8f4;
+    --line:rgba(47,44,40,.1);
+    --line-soft:rgba(47,44,40,.07);
+    --dark:#161513;
+    --wrap:1340px;
+    --font-body:'Spectral', Georgia, 'Times New Roman', serif;
+    --font-head:'Cormorant Unicase', serif;
+    --ease:cubic-bezier(.22,.61,.36,1);
+  }
+  *,*::before,*::after{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    margin:0;background:var(--cream);color:var(--ink);
+    font-family:var(--font-body);font-weight:400;line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;text-decoration:none;}
+  img{display:block;width:100%;height:100%;object-fit:cover;}
+
+  /* ---------- Шапка презентации ---------- */
+  .pres-header{
+    background:var(--dark);color:#fff;
+    padding:clamp(40px,6vw,80px) clamp(20px,4vw,56px);
+    text-align:center;
+  }
+  .pres-header .eyebrow{
+    font-family:var(--font-body);font-size:12px;font-weight:400;
+    letter-spacing:.28em;text-transform:uppercase;color:var(--gold);
+    margin:0 0 18px;
+  }
+  .pres-header h1{
+    font-family:var(--font-head);font-weight:500;
+    font-size:clamp(30px,4.6vw,52px);letter-spacing:.02em;line-height:1.1;
+    margin:0 0 18px;
+  }
+  .pres-header p{
+    max-width:640px;margin:0 auto;
+    font-size:clamp(15px,1.3vw,17px);color:rgba(255,255,255,.72);
+  }
+
+  /* ---------- Сетка прототипов ---------- */
+  main{max-width:var(--wrap);margin:0 auto;padding:clamp(48px,6vw,88px) clamp(20px,4vw,56px);}
+
+  .pres-group{margin-bottom:clamp(48px,6vw,80px);}
+  .pres-group:last-child{margin-bottom:0;}
+  .pres-group-head{
+    display:flex;align-items:baseline;gap:16px;
+    margin:0 0 clamp(20px,3vw,32px);
+  }
+  .pres-group-head h2{
+    font-family:var(--font-head);font-weight:500;
+    font-size:clamp(20px,2.2vw,28px);letter-spacing:.02em;
+    color:var(--gold);margin:0;white-space:nowrap;
+  }
+  .pres-group-head .rule{flex:1;height:1px;background:var(--line);}
+
+  .pres-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);
+    gap:clamp(20px,2.4vw,36px);
+  }
+
+  .pres-card{
+    display:flex;flex-direction:column;
+    background:#fff;border:1px solid var(--line-soft);
+    border-radius:2px;overflow:hidden;
+    transition:transform .4s var(--ease), box-shadow .4s var(--ease);
+  }
+  .pres-card:hover{
+    transform:translateY(-4px);
+    box-shadow:0 18px 40px rgba(47,44,40,.12);
+  }
+  .pres-card-media{
+    position:relative;aspect-ratio:4/3;background:#f0f0f0;overflow:hidden;
+  }
+  .pres-card-media img{transition:transform .6s var(--ease);}
+  .pres-card:hover .pres-card-media img{transform:scale(1.04);}
+  .pres-card-tag{
+    position:absolute;left:14px;top:14px;
+    background:rgba(22,21,19,.82);color:#fff;
+    font-family:var(--font-body);font-size:11px;font-weight:400;
+    letter-spacing:.16em;text-transform:uppercase;
+    padding:6px 12px;border-radius:2px;
+  }
+  .pres-card-body{
+    display:flex;flex-direction:column;flex:1;
+    padding:clamp(20px,2vw,28px);
+  }
+  .pres-card-kicker{
+    font-family:var(--font-body);font-size:11px;font-weight:400;
+    letter-spacing:.2em;text-transform:uppercase;color:var(--gray-title);
+    margin:0 0 10px;
+  }
+  .pres-card-body h3{
+    font-family:var(--font-head);font-weight:500;
+    font-size:clamp(19px,1.8vw,23px);letter-spacing:.02em;line-height:1.25;
+    color:var(--gold);margin:0 0 12px;
+  }
+  .pres-card-body p{
+    margin:0 0 22px;font-size:14px;line-height:1.6;color:var(--muted-2);
+  }
+  .pres-card-foot{
+    margin-top:auto;display:flex;align-items:center;justify-content:space-between;
+    padding-top:16px;border-top:1px solid var(--line-soft);
+  }
+  .pres-open{
+    font-family:var(--font-body);font-size:12px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--gold);
+    border-bottom:1px solid transparent;transition:border-color .3s;
+  }
+  .pres-card:hover .pres-open{border-color:var(--gold);}
+  .pres-path{
+    font-family:'SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace;
+    font-size:11px;color:var(--muted-2);opacity:.7;
+  }
+
+  /* ---------- Подвал ---------- */
+  .pres-footer{
+    border-top:1px solid var(--line);
+    padding:clamp(28px,3vw,40px) clamp(20px,4vw,56px);
+    text-align:center;color:var(--muted-2);font-size:13px;
+  }
+
+  /* ---------- Адаптив ---------- */
+  @media (max-width:900px){
+    .pres-grid{grid-template-columns:repeat(2,1fr);}
+  }
+  @media (max-width:560px){
+    .pres-grid{grid-template-columns:1fr;}
+    .pres-card-foot{flex-direction:column;align-items:flex-start;gap:8px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="pres-header">
+  <p class="eyebrow">RINGO · Презентация прототипов</p>
+  <h1>Прототипы страниц</h1>
+  <p>Кликните по карточке, чтобы открыть страницу-прототип в браузере. Под каждым превью указано, что это за страница и какая карточка на ней открывается.</p>
+</header>
+
+<main>
+
+  <!-- ГРУППА 1 — Карточки товара -->
+  <section class="pres-group" aria-label="Карточки товара">
+    <div class="pres-group-head">
+      <h2>Карточка товара</h2><span class="rule"></span>
+    </div>
+    <div class="pres-grid">
+
+      <!-- index.html -->
+      <a class="pres-card" href="index.html">
+        <div class="pres-card-media">
+          <img src="images/prod-kolco-catalog.jpg" alt="Золотое кольцо с бриллиантом">
+          <span class="pres-card-tag">Товар в коллекции</span>
+        </div>
+        <div class="pres-card-body">
+          <p class="pres-card-kicker">Карточка товара — вариант А</p>
+          <h3>Золотое кольцо с бриллиантом 0,039 карата</h3>
+          <p>Изделие В коллекции («Мозаика»): есть блок «История коллекции» и подборка «Составьте комплект из коллекции».</p>
+          <div class="pres-card-foot">
+            <span class="pres-open">Открыть →</span>
+            <span class="pres-path">index.html</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- product-catalog.html -->
+      <a class="pres-card" href="product-catalog.html">
+        <div class="pres-card-media">
+          <img src="images/hero-ring-front.jpg" alt="Помолвочное кольцо с бриллиантом">
+          <span class="pres-card-tag">Товар вне коллекции</span>
+        </div>
+        <div class="pres-card-body">
+          <p class="pres-card-kicker">Карточка товара — вариант Б</p>
+          <h3>Помолвочное кольцо с бриллиантом 0,15 карата</h3>
+          <p>Каталожное изделие ВНЕ коллекции: та же вёрстка, но без блоков коллекции (условная логика по свойствам изделия).</p>
+          <div class="pres-card-foot">
+            <span class="pres-open">Открыть →</span>
+            <span class="pres-path">product-catalog.html</span>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ГРУППА 2 — Каталог / листинг -->
+  <section class="pres-group" aria-label="Каталог и листинг">
+    <div class="pres-group-head">
+      <h2>Каталог</h2><span class="rule"></span>
+    </div>
+    <div class="pres-grid">
+
+      <!-- braslety.html -->
+      <a class="pres-card" href="braslety.html">
+        <div class="pres-card-media">
+          <img src="images/prod-braslet.jpg" alt="Золотые браслеты">
+          <span class="pres-card-tag">Листинг категории</span>
+        </div>
+        <div class="pres-card-body">
+          <p class="pres-card-kicker">Страница категории каталога</p>
+          <h3>Золотые браслеты</h3>
+          <p>Листинг с сеткой из 15 карточек, сортировкой, фильтром, блоком «Браслеты по коллекциям» и SEO-контентом.</p>
+          <div class="pres-card-foot">
+            <span class="pres-open">Открыть →</span>
+            <span class="pres-path">braslety.html</span>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ГРУППА 3 — Коллекции -->
+  <section class="pres-group" aria-label="Коллекции">
+    <div class="pres-group-head">
+      <h2>Коллекции</h2><span class="rule"></span>
+    </div>
+    <div class="pres-grid">
+
+      <!-- kollekcii.html -->
+      <a class="pres-card" href="kollekcii.html">
+        <div class="pres-card-media">
+          <img src="images/hero-set.jpg" alt="Коллекции RINGO">
+          <span class="pres-card-tag">Хаб коллекций</span>
+        </div>
+        <div class="pres-card-body">
+          <p class="pres-card-kicker">Обзорная страница коллекций</p>
+          <h3>Коллекции RINGO</h3>
+          <p>Хаб авторских коллекций с плашками-навигаторами (золотые заголовки, как на родном сайте) и мини-анонсами.</p>
+          <div class="pres-card-foot">
+            <span class="pres-open">Открыть →</span>
+            <span class="pres-path">kollekcii.html</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- kollekciya-laurel.html -->
+      <a class="pres-card" href="kollekciya-laurel.html">
+        <div class="pres-card-media">
+          <img src="images/laurel-hero.jpg" alt="Коллекция «Лавры»">
+          <span class="pres-card-tag">Страница коллекции</span>
+        </div>
+        <div class="pres-card-body">
+          <p class="pres-card-kicker">Страница одной коллекции</p>
+          <h3>Коллекция «Лавры»</h3>
+          <p>Золото с бриллиантами и подвижным лавром: hero, история коллекции и подборка изделий линейки.</p>
+          <div class="pres-card-foot">
+            <span class="pres-open">Открыть →</span>
+            <span class="pres-path">kollekciya-laurel.html</span>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ГРУППА 4 — Энциклопедия камней -->
+  <section class="pres-group" aria-label="Энциклопедия камней">
+    <div class="pres-group-head">
+      <h2>Энциклопедия камней</h2><span class="rule"></span>
+    </div>
+    <div class="pres-grid">
+
+      <!-- enciklopediya.html -->
+      <a class="pres-card" href="enciklopediya.html">
+        <div class="pres-card-media">
+          <img src="images/hero-set.jpg" alt="Энциклопедия драгоценных камней">
+          <span class="pres-card-tag">Хаб энциклопедии</span>
+        </div>
+        <div class="pres-card-body">
+          <p class="pres-card-kicker">Обзорная страница энциклопедии</p>
+          <h3>Энциклопедия драгоценных камней</h3>
+          <p>Хаб-раздел о камнях: навигатор по камням (плашки с золотыми заголовками), таблица, гайд и FAQ.</p>
+          <div class="pres-card-foot">
+            <span class="pres-open">Открыть →</span>
+            <span class="pres-path">enciklopediya.html</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- encyclopedia-izumrud.html -->
+      <a class="pres-card" href="encyclopedia-izumrud.html">
+        <div class="pres-card-media">
+          <img src="images/prod-pusety.jpg" alt="Изумруд">
+          <span class="pres-card-tag">Страница камня</span>
+        </div>
+        <div class="pres-card-body">
+          <p class="pres-card-kicker">Страница одного камня</p>
+          <h3>Изумруд</h3>
+          <p>Экспертная страница камня: тёмный hero, паспорт камня, свойства, гайд «как выбрать» и FAQ.</p>
+          <div class="pres-card-foot">
+            <span class="pres-open">Открыть →</span>
+            <span class="pres-path">encyclopedia-izumrud.html</span>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ГРУППА 5 — Подарки -->
+  <section class="pres-group" aria-label="Подарки">
+    <div class="pres-group-head">
+      <h2>Подарки</h2><span class="rule"></span>
+    </div>
+    <div class="pres-grid">
+
+      <!-- podarki.html -->
+      <a class="pres-card" href="podarki.html">
+        <div class="pres-card-media">
+          <img src="images/hero-set.jpg" alt="Ювелирные подарки">
+          <span class="pres-card-tag">Хаб подарков</span>
+        </div>
+        <div class="pres-card-body">
+          <p class="pres-card-kicker">Обзорная страница подарков</p>
+          <h3>Ювелирные подарки</h3>
+          <p>Подбор подарка по поводу, адресату и камню: навигаторы-плашки, гайд и FAQ.</p>
+          <div class="pres-card-foot">
+            <span class="pres-open">Открыть →</span>
+            <span class="pres-path">podarki.html</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- podarok-sapfirovaya-svadba.html -->
+      <a class="pres-card" href="podarok-sapfirovaya-svadba.html">
+        <div class="pres-card-media">
+          <img src="images/prod-pusety.jpg" alt="Подарок на сапфировую свадьбу">
+          <span class="pres-card-tag">Страница повода</span>
+        </div>
+        <div class="pres-card-body">
+          <p class="pres-card-kicker">Страница конкретного повода</p>
+          <h3>Что подарить на сапфировую свадьбу</h3>
+          <p>Идеи подарков с сапфиром к 45-летию свадьбы: паспорт повода, подборка изделий и советы.</p>
+          <div class="pres-card-foot">
+            <span class="pres-open">Открыть →</span>
+            <span class="pres-path">podarok-sapfirovaya-svadba.html</span>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ГРУППА 6 — Магазины (салоны) -->
+  <section class="pres-group" aria-label="Магазины и салоны">
+    <div class="pres-group-head">
+      <h2>Магазины</h2><span class="rule"></span>
+    </div>
+    <div class="pres-grid">
+
+      <!-- magaziny.html -->
+      <a class="pres-card" href="magaziny.html">
+        <div class="pres-card-media">
+          <img src="images/hero-set.jpg" alt="Салоны RINGO на карте России">
+          <span class="pres-card-tag">Хаб магазинов</span>
+        </div>
+        <div class="pres-card-body">
+          <p class="pres-card-kicker">Уровень 1 — все салоны сети</p>
+          <h3>Магазины RINGO</h3>
+          <p>Хаб раздела: флагманские салоны, общая карта с кластеризацией, рабочий фильтр (город, тип, геолокация) и список салонов по городам.</p>
+          <div class="pres-card-foot">
+            <span class="pres-open">Открыть →</span>
+            <span class="pres-path">magaziny.html</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- magaziny-novosibirsk.html -->
+      <a class="pres-card" href="magaziny-novosibirsk.html">
+        <div class="pres-card-media">
+          <img src="images/hero-hand-finger.jpg" alt="Салоны RINGO в Новосибирске">
+          <span class="pres-card-tag">Страница города</span>
+        </div>
+        <div class="pres-card-body">
+          <p class="pres-card-kicker">Уровень 2 — город (2+ салона)</p>
+          <h3>Салоны RINGO в Новосибирске</h3>
+          <p>Страница города: карта города, список из 3 салонов, «Что можно купить», схема резерва, FAQ города и другие города рядом.</p>
+          <div class="pres-card-foot">
+            <span class="pres-open">Открыть →</span>
+            <span class="pres-path">magaziny-novosibirsk.html</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- magaziny-salon.html -->
+      <a class="pres-card" href="magaziny-salon.html">
+        <div class="pres-card-media">
+          <img src="images/model-portrait.jpg" alt="Фирменный салон RINGO на Красном проспекте">
+          <span class="pres-card-tag">Карточка салона</span>
+        </div>
+        <div class="pres-card-body">
+          <p class="pres-card-kicker">Уровень 3 — один салон (флагман)</p>
+          <h3>Салон на Красном проспекте, 33</h3>
+          <p>Карточка одного салона: двухколоночный hero с галереей и таблицей часов, карта, «О салоне», услуги, гарантии и финальный CTA.</p>
+          <div class="pres-card-foot">
+            <span class="pres-open">Открыть →</span>
+            <span class="pres-path">magaziny-salon.html</span>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+</main>
+
+<footer class="pres-footer">
+  RINGO — презентационная заглушка прототипов. Страница служебная (noindex), не входит в структуру сайта.
+</footer>
+
+</body>
+</html>
