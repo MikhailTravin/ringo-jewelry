@@ -1,6 +1,31 @@
-document.addEventListener('DOMContentLoaded',()=>{
- document.querySelectorAll('.favorite-remove').forEach(btn=>btn.addEventListener('click',()=>{const card=btn.closest('.favorite-product');card.remove();if(!document.querySelector('.favorite-product')){const empty=document.querySelector('.favorite-empty');if(empty)empty.hidden=false;}}));
- document.querySelectorAll('.favorite-add').forEach(btn=>btn.addEventListener('click',()=>{btn.textContent='Добавлено';btn.disabled=true;btn.style.opacity='1';}));
- const remove=document.querySelector('.cart-item__remove');if(remove)remove.addEventListener('click',()=>{const item=document.querySelector('.cart-item');if(item)item.remove();const empty=document.querySelector('.cart-empty');if(empty)empty.hidden=false;document.querySelectorAll('.cart-total').forEach(el=>el.textContent='0 ₽');});
- const form=document.querySelector('.checkout-form');if(form)form.addEventListener('submit',e=>{e.preventDefault();if(form.reportValidity())alert('Это демонстрационная вёрстка: оформление заказа не подключено.');});
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.favorite-remove').forEach(btn => btn.addEventListener('click', () => { const card = btn.closest('.favorite-product'); card.remove(); if (!document.querySelector('.favorite-product')) { const empty = document.querySelector('.favorite-empty'); if (empty) empty.hidden = false; } }));
+    document.querySelectorAll('.favorite-add').forEach(btn => btn.addEventListener('click', () => { btn.textContent = 'Добавлено'; btn.disabled = true; btn.style.opacity = '1'; }));
+    const remove = document.querySelector('.cart-item__remove'); if (remove) remove.addEventListener('click', () => { const item = document.querySelector('.cart-item'); if (item) item.remove(); const empty = document.querySelector('.cart-empty'); if (empty) empty.hidden = false; document.querySelectorAll('.cart-total').forEach(el => el.textContent = '0 ₽'); });
+    const form = document.querySelector('.checkout-form'); if (form) form.addEventListener('submit', e => { e.preventDefault(); if (form.reportValidity()) alert('Это демонстрационная вёрстка: оформление заказа не подключено.'); });
 });
+
+function rangeInit() {
+    const rangeEl = document.querySelector('.bonus-range .range');
+    if (!rangeEl) return;
+
+    noUiSlider.create(rangeEl, {
+        start: [0],
+        connect: [true, false],
+        range: {
+            'min': [0],
+            'max': [10600]
+        },
+        tooltips: [true],
+        format: {
+            to: function (value) {
+                return Math.round(value); 
+            },
+            from: function (value) {
+                return Number(value);
+            }
+        }
+    });
+}
+
+rangeInit();

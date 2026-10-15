@@ -1,4 +1,25 @@
-<!DOCTYPE html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Корзина — RINGO</title><meta name="description" content="Проверьте выбранные украшения и перейдите к оформлению заказа RINGO."><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Unicase:wght@500;600&family=Spectral:wght@300;400;500;600&display=swap" rel="stylesheet"><link rel="stylesheet" href="css/ringo.css"><link rel="stylesheet" href="css/home.css"><link rel="stylesheet" href="css/info-pages.css"><link rel="stylesheet" href="css/shopping-pages.css"></head><body><header class="site-header">
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Корзина — RINGO</title>
+  <meta name="description" content="Проверьте выбранные украшения и перейдите к оформлению заказа RINGO.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Unicase:wght@500;600&family=Spectral:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/ringo.css">
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/info-pages.css">
+  <link rel="stylesheet" href="css/shopping-pages.css">
+  <link rel="stylesheet" href="css/range.css">
+</head>
+
+<body>
+  <header class="site-header">
     <div class="header-accent"></div>
     <div class="header-logo-row">
       <a class="header-logo" href="/" aria-label="RINGO — на главную">
@@ -6,8 +27,8 @@
       </a>
     </div>
     <div class="header-nav-row">
-      <button class="header-burger" type="button" id="header-burger" aria-label="Открыть меню"
-              aria-expanded="false" aria-controls="header-drawer">
+      <button class="header-burger" type="button" id="header-burger" aria-label="Открыть меню" aria-expanded="false"
+        aria-controls="header-drawer">
         <span class="header-burger-lines" aria-hidden="true"><span></span><span></span><span></span></span>
       </button>
       <nav class="header-nav" aria-label="Основная навигация">
@@ -19,62 +40,135 @@
       </nav>
       <div class="header-icons">
         <a href="tel:+74950000000" aria-label="Позвонить">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M5 4h3.5l1.8 4.5-2.2 1.6a12 12 0 005.2 5.2l1.6-2.2L21 16v3.5a1.5 1.5 0 01-1.6 1.5A16.5 16.5 0 013.5 5.6 1.5 1.5 0 015 4z" stroke-linejoin="round"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3">
+            <path
+              d="M5 4h3.5l1.8 4.5-2.2 1.6a12 12 0 005.2 5.2l1.6-2.2L21 16v3.5a1.5 1.5 0 01-1.6 1.5A16.5 16.5 0 013.5 5.6 1.5 1.5 0 015 4z"
+              stroke-linejoin="round" />
+          </svg>
         </a>
         <a href="/search/" aria-label="Поиск">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="10.5" cy="10.5" r="6.5"/><line x1="15.5" y1="15.5" x2="20.5" y2="20.5" stroke-linecap="round"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3">
+            <circle cx="10.5" cy="10.5" r="6.5" />
+            <line x1="15.5" y1="15.5" x2="20.5" y2="20.5" stroke-linecap="round" />
+          </svg>
         </a>
         <a href="personal.html" aria-label="Личный кабинет">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="12" cy="8" r="4"/><path d="M4.5 20.5c0-4 3.4-6.5 7.5-6.5s7.5 2.5 7.5 6.5" stroke-linecap="round"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3">
+            <circle cx="12" cy="8" r="4" />
+            <path d="M4.5 20.5c0-4 3.4-6.5 7.5-6.5s7.5 2.5 7.5 6.5" stroke-linecap="round" />
+          </svg>
         </a>
         <a href="favorite.html" aria-label="Избранное">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20.3l-1.45-1.32C5.7 14.6 3 12.1 3 9 3 6.5 5 4.5 7.5 4.5c1.4 0 2.75.65 3.6 1.7l.9 1.1.9-1.1c.85-1.05 2.2-1.7 3.6-1.7C19 4.5 21 6.5 21 9c0 3.1-2.7 5.6-7.55 9.98L12 20.3z"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"
+            stroke-linejoin="round">
+            <path
+              d="M12 20.3l-1.45-1.32C5.7 14.6 3 12.1 3 9 3 6.5 5 4.5 7.5 4.5c1.4 0 2.75.65 3.6 1.7l.9 1.1.9-1.1c.85-1.05 2.2-1.7 3.6-1.7C19 4.5 21 6.5 21 9c0 3.1-2.7 5.6-7.55 9.98L12 20.3z" />
+          </svg>
         </a>
         <a href="korzina.html" aria-label="Корзина">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M7 9h10l-.62 10.55a1 1 0 01-1 .95H8.62a1 1 0 01-1-.95L7 9z"/><path d="M9.3 9V7.5a2.7 2.7 0 015.4 0V9"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"
+            stroke-linejoin="round">
+            <path d="M7 9h10l-.62 10.55a1 1 0 01-1 .95H8.62a1 1 0 01-1-.95L7 9z" />
+            <path d="M9.3 9V7.5a2.7 2.7 0 015.4 0V9" />
+          </svg>
         </a>
       </div>
     </div>
-  </header><main class="shop-page cart-page">
-  <h1>Корзина</h1>
-  <p class="cart-intro">После оформления заказа наш менеджер перезвонит Вам для подтверждения заказа<br>с 10.00 до 20.00 по московскому времени. Пожалуйста, будьте на связи.</p>
-  <div class="cart-layout-live">
-    <section class="cart-items" aria-label="Товары в корзине">
-      <article class="cart-item" data-price="106000">
-        <img class="cart-item__image" src="images/hero-hand-finger.jpg" alt="Помолвочное кольцо из белого золота с бриллиантом">
-        <div class="cart-item__details">
-          <button class="cart-item__remove" type="button" aria-label="Удалить товар">×</button>
-          <a class="cart-item__name" href="product-catalog.html">Помолвочное кольцо из белого золота с бриллиантом 0,088 карата</a>
-          <p>Камни: Бриллиант</p><p>Цвет золота: белое</p><p>Проба: 585</p><p>Размер: 15</p><p>Доставка: до 14 дней</p>
-          <strong class="cart-item__price">106 000 ₽</strong>
-        </div>
-      </article>
-      <div class="cart-empty" hidden>Ваша корзина пуста. <a href="product-catalog.html">Перейти в каталог</a></div>
-    </section>
-    <form class="checkout-form" action="#" method="get">
-      <h2>Информация о заказе</h2>
-      <input aria-label="Ваше имя" placeholder="Ваше имя*" required>
-      <input aria-label="Телефон" type="tel" placeholder="+7 (900) 000-00-01" required>
-      <input aria-label="Электронная почта" type="email" placeholder="Электронная почта" required>
-      <textarea aria-label="Комментарий" placeholder="Комментарий" rows="3"></textarea>
-      <h2 class="checkout-subtitle">Доставка</h2>
-      <input aria-label="Город" placeholder="Город" required>
-      <input aria-label="Адрес" placeholder="Адрес" required>
-      <section class="bonus-box">
-        <h3>Бонусная система Клуба</h3><p>Всего баллов: 50 000 БР</p><p>Доступно для списания: 10 600 БР</p>
-        <label class="bonus-range-label" for="bonus-range"><span>0</span><span>10 600</span></label><input id="bonus-range" type="range" min="0" max="10600" value="0">
-        <label class="payment-choice"><input type="checkbox"> Оплатить на сайте</label>
-        <label class="payment-choice"><input type="checkbox"> Долями — оплата покупок частями</label>
+  </header>
+  <main class="shop-page cart-page">
+    <h1>Корзина</h1>
+    <p class="cart-intro">После оформления заказа наш менеджер перезвонит Вам для подтверждения заказа<br>с 10.00 до
+      20.00 по московскому времени. Пожалуйста, будьте на связи.</p>
+    <div class="cart-layout-live">
+      <section class="cart-items" aria-label="Товары в корзине">
+        <article class="cart-item" data-price="106000">
+          <img class="cart-item__image" src="images/hero-hand-finger.jpg"
+            alt="Помолвочное кольцо из белого золота с бриллиантом">
+          <div class="cart-item__details">
+            <button class="cart-item__remove" type="button" aria-label="Удалить товар">×</button>
+            <a class="cart-item__name" href="product-catalog.html">Помолвочное кольцо из белого золота с бриллиантом
+              0,088 карата</a>
+            <p>Камни: Бриллиант</p>
+            <p>Цвет золота: белое</p>
+            <p>Проба: 585</p>
+            <p>Размер: 15</p>
+            <p>Доставка: до 14 дней</p>
+            <strong class="cart-item__price">106 000 ₽</strong>
+          </div>
+        </article>
+        <div class="cart-empty" hidden>Ваша корзина пуста. <a href="product-catalog.html">Перейти в каталог</a></div>
       </section>
-      <div class="cart-cost"><p>Стоимость доставки <strong>0 ₽</strong></p><p>Стоимость украшений <strong class="cart-total">106 000 ₽</strong></p></div>
-      <input class="promo-input" placeholder="Промо-код" aria-label="Промо-код">
-      <h3 class="total-heading">Итого <strong class="cart-total">106 000 ₽</strong></h3>
-      <label class="consent-check"><input type="checkbox" required> Я ознакомлен и согласен с правилами продажи ювелирных украшений, с политикой обработки персональных данных и даю своё согласие на обработку моих персональных данных</label>
-      <label class="consent-check"><input type="checkbox"> Я даю Согласие на обработку персональных данных для получения информационно-рекламных сообщений</label>
-      <button class="checkout-submit" type="submit">Оформить заказ</button>
-    </form>
-  </div>
-</main><footer class="site-footer">
+      <form class="checkout-form" action="#" method="get">
+        <h2>Информация о заказе</h2>
+        <input aria-label="Ваше имя" placeholder="Ваше имя*" required>
+        <input aria-label="Телефон" type="tel" placeholder="+7 (900) 000-00-01" required class="telephone">
+        <input aria-label="Электронная почта" type="email" placeholder="Электронная почта" required>
+        <textarea aria-label="Комментарий" placeholder="Комментарий" rows="3"></textarea>
+        <h2 class="checkout-subtitle">Доставка</h2>
+        <input aria-label="Город" placeholder="Город" required>
+        <input aria-label="Адрес" placeholder="Адрес" required>
+        <section class="bonus-box">
+          <h3>Бонусная система Клуба</h3>
+          <p>Всего баллов: 50 000 БР</p>
+          <p>Доступно для списания: 10 600 БР</p>
+          <div class="bonus-range">
+            <div class="bonus-range-numbers">
+              <span id="price-start">0</span>
+              <span id="price-end">10600</span>
+            </div>
+            <div class="range"></div>
+          </div>
+          <div class="checkboxes">
+            <label class="checkbox">
+              <input class="checkbox__input" type="checkbox" value="1" name="checkbox1">
+              <span class="checkbox__label">
+                <span class="checkbox__icon"></span>
+                <span class="checkbox__text">Оплатить на сайте</span>
+              </span>
+            </label>
+            <label class="checkbox">
+              <input class="checkbox__input" type="checkbox" value="2" name="checkbox2">
+              <span class="checkbox__label">
+                <span class="checkbox__icon"></span>
+                <span class="checkbox__text">Долями — оплата покупок частями</span>
+              </span>
+            </label>
+          </div>
+        </section>
+        <div class="cart-cost">
+          <p>Стоимость доставки <strong>0 ₽</strong></p>
+          <p>Стоимость украшений <strong class="cart-total">106 000 ₽</strong></p>
+        </div>
+        <input class="promo-input" placeholder="Промо-код" aria-label="Промо-код">
+        <h3 class="total-heading">Итого <strong class="cart-total">106 000 ₽</strong></h3>
+        <div class="checkboxes">
+          <label class="checkbox">
+            <input class="checkbox__input" type="checkbox" value="3" name="checkbox3">
+            <span class="checkbox__label">
+              <span class="checkbox__icon"></span>
+              <span class="checkbox__text">
+                Я ознакомлен и согласен с правилами продажи
+                ювелирных украшений, с политикой обработки персональных данных и даю своё согласие на обработку моих
+                персональных данных
+              </span>
+            </span>
+          </label>
+          <label class="checkbox">
+            <input class="checkbox__input" type="checkbox" value="4" name="checkbox4">
+            <span class="checkbox__label">
+              <span class="checkbox__icon"></span>
+              <span class="checkbox__text">
+                Я даю Согласие на обработку персональных данных для
+                получения информационно-рекламных сообщений
+              </span>
+            </span>
+          </label>
+        </div>
+        <button class="checkout-submit" type="submit">Оформить заказ</button>
+      </form>
+    </div>
+  </main>
+  <footer class="site-footer">
     <div class="footer-inner">
       <div class="footer-cols">
         <nav class="footer-col" aria-label="Клиентам">
@@ -107,4 +201,21 @@
         <span>© RINGO 1993—2026 · shop@ringo-jewelry.ru</span>
       </div>
     </div>
-  </footer><script src="js/header.js"></script><script src="js/shopping-pages.js"></script></body></html>
+  </footer>
+  <script src="js/header.js"></script>
+  <script src="js/nouislider.min.js"></script>
+  <script src="js/shopping-pages.js"></script>
+  <script src="js/inputmask.min.js"></script>
+  <script>
+    //Маска
+    const telephone = document.querySelectorAll('.telephone');
+    if (telephone) {
+      Inputmask({
+        "mask": "+7 (999) 999 - 99 - 99",
+        "showMaskOnHover": false,
+      }).mask(telephone);
+    }
+  </script>
+</body>
+
+</html>
