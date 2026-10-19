@@ -1,0 +1,18 @@
+
+.ds-ink{background:var(--ink)}
+.ds-ink-2{background:var(--ink-2)}
+.ds-muted{background:var(--muted)}
+.ds-gold{background:var(--gold)}
+.ds-gold-hover{background:var(--gold-hover)}
+.ds-gold-dark{background:var(--gold-dark)}
+.ds-cream{background:var(--cream)}
+.ds-sand{background:var(--sand)}
+.ds-line-warm{background:var(--line-warm)}
+.ds-dark{background:var(--dark)}
+.ds-swatches{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin:24px 0 40px}
+.ds-sw{display:flex;flex-direction:column;gap:4px;font-size:13px}.ds-sw small{color:var(--muted)}
+.ds-chip{height:64px;border:1px solid var(--line-warm)}
+.ds-row{display:flex;flex-wrap:wrap;gap:16px;align-items:center;margin:20px 0 40px}
+.ds-spec{font-size:13px;color:var(--muted);margin:0 0 28px}
+.ds-card{padding:24px;border:1px solid var(--line-warm);background:var(--cream);min-width:240px}
+@media(max-width:760px){.ds-swatches{grid-template-columns:repeat(2,1fr)}}

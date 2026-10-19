@@ -24,6 +24,11 @@
   --line-soft:rgba(47,44,40,.07);
   --line-16:rgba(47,44,40,.16);
   --placeholder:#f0f0f0;
+  --gold-dark:#8a6a3f;
+  --sand:#f0ebe3;
+  --line-warm:#e0d8ce;
+  --eyebrow-size:13px;
+  --eyebrow-track:.24em;
   --dark:#161513;            /* rgb(22,21,19) */
   --wrap:1340px;
   --wrap-narrow:1180px;
@@ -367,8 +372,8 @@ a{color:inherit;}
   display:flex;align-items:center;gap:16px;margin-bottom:clamp(36px,5vw,58px);
 }
 .section-eyebrow .txt{
-  font-family:var(--font-body);font-weight:500;font-size:13px;
-  letter-spacing:.24em;text-transform:uppercase;color:var(--gray-title);
+  font-family:var(--font-body);font-weight:500;font-size:var(--eyebrow-size);
+  letter-spacing:var(--eyebrow-track);text-transform:uppercase;color:var(--gray-title);
 }
 .section-eyebrow .rule{flex:1 1 0;height:1px;background:var(--line);}
 

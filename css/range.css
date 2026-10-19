@@ -21,8 +21,7 @@
 	position: relative;
 	z-index: 1;
 }
-/* Wrapper for all connect elements.
- */
+
 .noUi-connects {
 	z-index: 0;
 }
@@ -41,15 +40,12 @@
 	transform-origin: 0 0;
 	transform-style: flat;
 }
-/* Offset direction
- */
+
 .noUi-txt-dir-rtl.noUi-horizontal .noUi-origin {
 	left: 0;
 	right: auto;
 }
-/* Give origins 0 height/width so they don't interfere with clicking the
- * connect elements.
- */
+
 .noUi-vertical .noUi-origin {
 	top: -100%;
 	width: 0;
@@ -72,15 +68,14 @@
 .noUi-state-drag * {
 	cursor: inherit !important;
 }
-/* Slider size and handle placement;
- */
+
 .noUi-horizontal {
 	height: 1px;
 }
 .noUi-horizontal .noUi-handle {
 	width: 13px;
 	height: 13px;
-	background: #be915f;
+	background: var(--gold);
 	right: -12px;
 	top: -6.5px;
 	border-radius: 50%;
@@ -114,9 +109,7 @@
 	left: -17px;
 	right: auto;
 }
-/* Styling;
- * Giving the connect element a border radius causes issues with using transform: scale
- */
+
 .noUi-target {
 	background: rgba(194, 161, 140, 0.2);
 }
@@ -126,10 +119,9 @@
 	height: 3px;
 	top: -1.5px;
 	height: calc(100% + 1.5px);
-	background:#be915f;
+	background:var(--gold);
 }
-/* Handles and cursors;
- */
+
 .noUi-draggable {
 	cursor: ew-resize;
 }
@@ -141,10 +133,7 @@
 }
 .noUi-active {
 }
-/* Handle stripes;
- */
-/* Disabled state;
- */
+
 [disabled] .noUi-connect {
 	background: #b8b8b8;
 }
@@ -153,9 +142,7 @@
 [disabled] .noUi-handle {
 	cursor: not-allowed;
 }
-/* Base;
- *
- */
+
 .noUi-pips,
 .noUi-pips * {
 	box-sizing: border-box;
@@ -164,24 +151,20 @@
 	position: absolute;
 	color: #999;
 }
-/* Values;
- *
- */
+
 .noUi-value {
 	position: absolute;
 	white-space: nowrap;
 	text-align: center;
 	font-weight: 400;
 	font-size: 16px;
-	color: #686868;
+	color: var(--muted);
 }
 .noUi-value-sub {
 	color: #ccc;
-	font-size: 10px;
+	font-size: 11px;
 }
-/* Markings;
- *
- */
+
 .noUi-marker {
 	position: absolute;
 	background: #ccc;
@@ -192,9 +175,7 @@
 .noUi-marker-large {
 	background: #aaa;
 }
-/* Horizontal layout;
- *
- */
+
 .noUi-pips-horizontal {
 	padding: 10px 0px 0px 0px;
 	height: 20px;
@@ -221,9 +202,7 @@
 	display: none;
 	height: 15px;
 }
-/* Vertical layout;
- *
- */
+
 .noUi-pips-vertical {
 	padding: 0 10px;
 	height: 100%;
@@ -252,7 +231,7 @@
 	display: block;
 	position: absolute;
 	color: #fff;
-    background: #be915f;
+    background: var(--gold);
     font-size: 14px;
     line-height: 1.333;
     text-shadow: none;
