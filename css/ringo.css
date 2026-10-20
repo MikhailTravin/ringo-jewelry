@@ -1169,3 +1169,6 @@ a{color:inherit;}
   .gift-card{flex:1 1 100%;}
   .pairs-grid .product-card{flex:0 0 78%;}
 }
+
+/* Social icons */
+.footer-social svg{width:18px;height:18px;display:block;}

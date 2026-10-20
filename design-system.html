@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Дизайн-система — RINGO</title><meta name="description" content="Условия оформления, оплаты и доставки заказов RINGO."><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Unicase:wght@500;600&family=Spectral:wght@300;400;500;600&display=swap" rel="stylesheet"><link rel="stylesheet" href="css/ringo.css"><link rel="stylesheet" href="css/home.css"><link rel="stylesheet" href="css/info-pages.css"><link rel="stylesheet" href="css/design-system.css"></head><body><header class="site-header">
+<!DOCTYPE html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Дизайн-система — RINGO</title><meta name="description" content="Эталон типографики, цветов, отступов и повторяющихся интерфейсных элементов RINGO."><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Unicase:wght@500;600&family=Spectral:wght@300;400;500;600&display=swap" rel="stylesheet"><link rel="stylesheet" href="css/ringo.css"><link rel="stylesheet" href="css/home.css"><link rel="stylesheet" href="css/info-pages.css"><link rel="stylesheet" href="css/design-system.css"></head><body><header class="site-header">
     <div class="header-accent"></div>
     <div class="header-logo-row">
       <a class="header-logo" href="/" aria-label="RINGO — на главную">
@@ -18,7 +18,7 @@
         <a href="magaziny.html">Магазины</a>
       </nav>
       <div class="header-icons">
-        <a href="tel:+74950000000" aria-label="Позвонить">
+        <a href="tel:+79055825775" aria-label="Позвонить">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M5 4h3.5l1.8 4.5-2.2 1.6a12 12 0 005.2 5.2l1.6-2.2L21 16v3.5a1.5 1.5 0 01-1.6 1.5A16.5 16.5 0 013.5 5.6 1.5 1.5 0 015 4z" stroke-linejoin="round"/></svg>
         </a>
         <a href="/search/" aria-label="Поиск">
@@ -35,14 +35,14 @@
         </a>
       </div>
     </div>
-  </header><main class="info-page"><section class="info-hero"><span class="eyebrow">Дизайн-система</span><h1>Образец элементов RINGO</h1><p>Токены, типографика, отступы, секции и кнопки. Любая новая страница собирается только из этих элементов.</p></section>
+  </header><main class="info-page"><section class="info-hero"><span class="eyebrow">Дизайн-система</span><h1>Образец элементов RINGO</h1><p>Эталон типографики, цветов, отступов, секций и повторяющихся компонентов RINGO.</p></section>
 <div class="info-content">
 <h2>1. Цвета (токены ringo.css)</h2><p class="ds-spec">Свои оттенки в новых CSS не вводим. Нужен новый цвет, сначала добавляем токен в :root.</p><div class="ds-swatches"><div class="ds-sw"><span class="ds-chip ds-ink"></span><b>--ink</b><small>Основной текст, заголовки</small></div><div class="ds-sw"><span class="ds-chip ds-ink-2"></span><b>--ink-2</b><small>Вторичный текст</small></div><div class="ds-sw"><span class="ds-chip ds-muted"></span><b>--muted</b><small>Подписи</small></div><div class="ds-sw"><span class="ds-chip ds-gold"></span><b>--gold</b><small>Акцент, кнопки, линии</small></div><div class="ds-sw"><span class="ds-chip ds-gold-hover"></span><b>--gold-hover</b><small>Ховер акцента</small></div><div class="ds-sw"><span class="ds-chip ds-gold-dark"></span><b>--gold-dark</b><small>Ссылки на светлом</small></div><div class="ds-sw"><span class="ds-chip ds-cream"></span><b>--cream</b><small>Фон секций</small></div><div class="ds-sw"><span class="ds-chip ds-sand"></span><b>--sand</b><small>Плашки, заливки</small></div><div class="ds-sw"><span class="ds-chip ds-line-warm"></span><b>--line-warm</b><small>Разделители</small></div><div class="ds-sw"><span class="ds-chip ds-dark"></span><b>--dark</b><small>Тёмные блоки, шапка info</small></div></div>
 <h2>2. Типографика</h2><p class="ds-spec">Заголовки: var(--font-head), Cormorant Unicase 500. Текст: var(--font-body), Spectral 17/1.62.</p>
 <h1>H1 Заголовок страницы</h1><h2>H2 Заголовок раздела</h2><h3>H3 Заголовок блока</h3><p class="lead">Lead: вводный абзац 21px, ширина до 850px.</p><p>Основной текст 16/1.85 в info-content. Абзацы разделены 18px.</p><p class="muted">Muted: подписи и примечания 13px.</p>
 <h2>3. Отступы и секции</h2><p class="ds-spec">Страница: info-hero (64px сверху, 58px снизу), затем info-content (58px сверху, ширина 1120px). Перед H2: 42px, после H2: 16px. Между блоками 32px (notice, tiers). Вертикальный ритм общих секций: var(--section-y), боковой: var(--gutter-x).</p>
 <div class="notice"><b>Notice.</b> Плашка-примечание: фон var(--sand), слева линия var(--gold).</div>
-<h2>4. Кнопки и ссылки</h2><div class="ds-row"><a class="btn" href="#">Кнопка .btn</a><button class="btn" disabled>Неактивная</button><a class="text-link" href="#">Текстовая ссылка</a></div>
+<h2>4. Кнопки и ссылки</h2><div class="ds-row"><a class="btn" href="product-catalog.html">Кнопка .btn</a><button class="btn" disabled>Неактивная</button><a class="text-link" href="kollekcii.html">Текстовая ссылка</a></div>
 <h2>5. Карточки и сетки</h2><div class="tiers"><article><span>01</span><h3>Заголовок</h3><p>Карточка .tiers: 4 колонки, 2 на мобильном.</p></article><article><span>02</span><h3>Заголовок</h3><p>Рамка var(--line-warm), фон var(--cream).</p></article><article><span>03</span><h3>Заголовок</h3><p>Внутренний отступ 22/18.</p></article><article><span>04</span><h3>Заголовок</h3><p>Нумерация золотом.</p></article></div>
 <div class="requisites"><p><strong>Лейбл</strong><br>Значение</p><p><strong>Лейбл</strong><br>Значение</p></div>
 </div></main><footer class="site-footer">
@@ -69,8 +69,12 @@
           <a href="/notice/">Уведомление о постановке на учёт</a>
         </nav>
         <div class="footer-social">
-          <a href="#" aria-label="Telegram">tg</a>
-          <a href="#" aria-label="VK">vk</a>
+          <a href="https://t.me/ringojewelry" aria-label="Telegram" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M21.4 4.6 18.2 19c-.2 1-1 1.2-1.8.8l-5-3.7-2.4 2.3c-.3.3-.5.5-1 .5l.4-5.1 9.3-8.4c.4-.4-.1-.6-.6-.2L5.6 12.8l-4.9-1.6c-1.1-.3-1.1-1.1.2-1.6L20.1 3c.9-.3 1.7.2 1.3 1.6Z"/></svg>
+          </a>
+          <a href="https://vk.ru/ringojewelry" aria-label="VK" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3.2 6.2h3.1c.1 3.7 1.8 5.3 3.1 5.6V6.2h2.9v3.2c1.2-.1 2.6-1.5 3-3.2h2.9c-.2 1.1-.6 2.1-1.3 2.9-.6.8-1.4 1.5-2.1 2 1 .5 1.9 1.2 2.6 2.1.8.9 1.3 1.8 1.7 2.8h-3.2c-.4-1-.9-1.8-1.5-2.5-.6-.7-1.3-1.1-2.1-1.2v3.7H11c-4.8 0-7.5-3.3-7.8-9.8Z"/></svg>
+          </a>
         </div>
       </div>
       <div class="footer-bottom">
