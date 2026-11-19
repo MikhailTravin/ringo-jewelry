@@ -1,0 +1,147 @@
+/* ============================================================
+   RINGO — стиль ringo-maket для страниц, которых нет в макете
+   (каталог, карточка товара, коллекции, акции, корзина, салоны и др.)
+
+   Подключается ПОСЛЕ ringo.css и css самой страницы.
+   Что приводится к макету:
+     1. токены: серые тона, линии, фоны плашек, золото для ссылок,
+        вертикальный ритм секций и ширина контейнера;
+     2. шкала заголовков: h1 страницы 48/34 px, заголовки секций
+        48/30 px, выравнивание влево, как на страницах макета;
+     3. надзаголовки: 12 px, трекинг .22em, цвет brass, без линий-«усов»;
+     4. кнопки: контур 1 px → золото при наведении (в макете нет
+        залитых кнопок), 12 px, трекинг .16em, высота 52 px;
+     5. ссылки «подробнее», чипы, поля ввода.
+   Шапка, подвал, блок «Свяжитесь с нами» — css/site-chrome.css.
+   Правила повторяют селекторы старых стилей и лежат ниже них
+   по порядку подключения; когда страницу перерисуют по макету,
+   подключение файла можно убрать.
+   ============================================================ */
+
+/* ---------- 1. Токены ---------- */
+:root{
+  --wrap:1360px;
+  --gutter-x:clamp(20px,2.78vw,40px);
+  --section-y:clamp(64px,8.33vw,120px);
+
+  /* тексты */
+  --ink:#2F2C28;
+  --ink-2:#4A453F;
+  --body-2:#4A453F;
+  --card-title:#2F2C28;
+  --muted:#6F675E;
+  --muted-2:#6F675E;
+  --muted-3:#8A847E;
+  --muted-4:#8A847E;
+
+  /* акценты */
+  --gold:#BA905A;
+  --gold-dark:#7A5C34;
+  --gray-title:#7A5C34;          /* надзаголовки — brass, как в макете */
+  --eyebrow-size:12px;
+  --eyebrow-track:.22em;
+
+  /* линии и подложки */
+  --line:#EDEAE5;
+  --line-soft:#F0ECE6;
+  --line-16:#E4E1DC;
+  --line-warm:#E3DBCE;
+  --sand:#F2EEE7;
+  --cream:#F7F5F2;
+  --placeholder:#F0F0F0;
+}
+body{color:var(--ink)}
+
+/* ---------- 2. Заголовки ---------- */
+/* Шкала макета: h1 страницы 48/34, заголовок секции 48/30 */
+.enc-hero h1,.cat-hero h1,.promo-page-heading h1,.shop-page h1{
+  font-size:clamp(34px,3.33vw,48px);line-height:1.12;letter-spacing:.01em;color:var(--ink);
+}
+.pairs-head h2,.about-head h2,.collection-head h2,.collection-video-head h2,.promo-trust__copy h2,
+.gift-head h2,.section>h2,.section-inner>h2{
+  font-size:clamp(30px,3.33vw,48px);line-height:1.08;letter-spacing:.01em;
+}
+.guarantees-inner h2,.info-content h2,.exclusive-hero h2{
+  font-size:clamp(28px,2.6vw,36px);line-height:1.15;
+}
+.hero-info h1,.salon-info h1{font-size:clamp(30px,3vw,42px);line-height:1.12}
+
+/* Hero страниц на сплошном фоне: слева, как «Интро» в макете */
+.enc-hero,.cat-hero{text-align:left;max-width:var(--wrap)}
+.enc-hero{padding:clamp(24px,3vw,40px) var(--gutter-x) clamp(16px,2vw,24px)}
+.cat-hero{padding:clamp(24px,3vw,40px) var(--gutter-x) clamp(8px,1vw,16px)}
+.enc-hero h1{margin:0 0 20px}
+.enc-hero p:not(.section-eyebrow){max-width:960px;margin:0;font-size:clamp(17px,1.53vw,22px);line-height:1.55;color:var(--ink)}
+.cat-hero p{max-width:960px;margin-left:0;margin-right:0}
+.pairs-head{text-align:left}
+.pairs-head p{max-width:none}
+.promo-page-heading{max-width:960px}
+.promo-page-heading p{max-width:960px;font-size:clamp(17px,1.53vw,22px);color:var(--ink)}
+.shop-page{max-width:var(--wrap);padding-left:var(--gutter-x);padding-right:var(--gutter-x)}
+.shop-page h1{text-align:left;margin-bottom:16px}
+.shop-page h1+p{text-align:left;margin-left:0;max-width:760px}
+
+/* ---------- 3. Надзаголовки ---------- */
+.eyebrow,.section-eyebrow,.pairs-head p,.txt{
+  font-size:var(--eyebrow-size);font-weight:500;letter-spacing:var(--eyebrow-track);text-transform:uppercase;
+}
+.eyebrow,.section-eyebrow,.pairs-head p{color:var(--gray-title)}
+.section-eyebrow{justify-content:flex-start}
+.section-eyebrow .rule{display:none}                 /* декоративные линии по бокам не нужны */
+.enc-hero .section-eyebrow{justify-content:flex-start}
+
+/* ---------- 4. Кнопки ---------- */
+.btn-cart,.gold-button,.checkout-submit,.btn,.salon-btn-primary,.cat-loadmore,.cat-filter-apply{
+  display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 32px;box-sizing:border-box;
+  border:1px solid var(--dark);border-radius:0;background:transparent;color:var(--dark);
+  font-family:var(--font-body);font-size:12px;font-weight:500;letter-spacing:.16em;line-height:1.2;text-transform:uppercase;text-decoration:none;
+  filter:none;cursor:pointer;transition:background-color .25s,color .25s,border-color .25s;
+}
+.btn-cart:hover,.gold-button:hover,.checkout-submit:hover,.btn:hover,.salon-btn-primary:hover,.cat-loadmore:hover,.cat-filter-apply:hover,
+.btn-cart:active,.gold-button:active,.checkout-submit:active,.btn:active,.salon-btn-primary:active{
+  background:var(--gold);border-color:var(--gold);color:#fff;filter:none;
+}
+.btn-cart{flex:1 1 auto}
+.btn-cart.is-added{background:var(--dark);border-color:var(--dark);color:#fff}
+.checkout-submit{width:100%}
+.btn-wish{border-color:var(--line-16);border-radius:0}
+.btn-wish:hover{border-color:var(--gold)}
+.salon-btn{border-radius:0;font-size:12px;letter-spacing:.16em;text-transform:uppercase}
+
+/* ---------- 5. Ссылки, чипы, поля ---------- */
+.text-link{
+  font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);text-decoration:none;
+  border-bottom:1px solid currentColor;padding-bottom:4px;transition:color .25s;
+}
+.text-link:hover{color:var(--gold-dark)}
+.tag-links a,.cat-sort-trigger,.cat-filter-toggle{border-color:var(--line-16);transition:border-color .25s,color .25s}
+.tag-links a:hover,.cat-sort-trigger:hover,.cat-filter-toggle:hover{border-color:var(--gold);color:var(--gold-dark)}
+main input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=hidden]),main textarea,main select{
+  border-color:#CFC4B4;border-radius:0;color:var(--ink);font-family:var(--font-body);font-size:15px;
+}
+main input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=hidden]):focus,main textarea:focus,main select:focus{
+  outline:none;border-color:var(--dark);
+}
+
+/* ---------- 6. Хлебные крошки (как в макете) ---------- */
+.breadcrumbs,.promo-breadcrumbs{gap:10px;letter-spacing:.04em;color:#8A847E}
+.breadcrumbs a,.promo-breadcrumbs a{color:#8A847E}
+.breadcrumbs a:hover,.promo-breadcrumbs a:hover{color:var(--ink)}
+.breadcrumbs span[aria-current]{color:var(--ink)}
+.topbar{padding-top:32px}
+
+/* ---------- 7. Плитки: плоские, без теней ---------- */
+.ph,.cat-card-media{box-shadow:none}
+
+/* Старый баг: счётчик в списке салонов выходит за ширину экрана */
+.salons-list{overflow-x:clip}
+
+/* ---------- Мобильная версия ---------- */
+@media (max-width:900px){
+  .enc-hero h1,.cat-hero h1,.promo-page-heading h1,.shop-page h1{font-size:34px}
+  .pairs-head h2,.about-head h2,.collection-head h2,.collection-video-head h2,.promo-trust__copy h2,
+  .gift-head h2,.section>h2,.section-inner>h2{font-size:30px}
+  .guarantees-inner h2,.info-content h2,.exclusive-hero h2{font-size:26px}
+  .enc-hero p:not(.section-eyebrow),.promo-page-heading p{font-size:17px;line-height:1.6}
+  .btn-cart,.gold-button,.checkout-submit,.btn,.salon-btn-primary,.cat-loadmore,.cat-filter-apply{min-height:50px;padding:0 24px;letter-spacing:.14em}
+}
